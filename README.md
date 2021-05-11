@@ -1,2 +1,19 @@
-# Identification-of-Herbal-Medicine-Plant-Leaf
-In Indonesia no less than 30000 species of plants. But of the many species, most people do not know the benefits, especially herbal plants.
+# Identification of Herbal Medicine Plant Leaf
+
+<img src="https://github.com/MohFahmi27/Identification-of-Herbal-Medicine-Plant-Leaf/blob/main/bangkit_banner.png" width="100%" height="450">
+
+In Indonesia no less than 30.000 species of plants. But of the many species, most people do not know the benefits, especially for herbal plants. So this project proposed to help people recognize the herbal plants instantly, give information to people that don’t know about herbal plants, also give recommendations about how herbal plants grow and a tutorial to use it. These facilities provided with some facilities that were constructed by collecting the database from suitable dataset, tied the dataset by multi-classification image using tensorflow as a machine learning program, and conducted all of them by android program that might be developed to be more friendly application to use by people. 
+
+## Project Resource: 
+- Paper Reference: https://jurnal.ugm.ac.id/v3/JNTETI/article/view/302/186
+- Medicinal Leaf Dataset: https://data.mendeley.com/datasets/nnytj2v3n5
+
+## Capstone Project Team: 
+| Name | Bangkit-ID |
+| ------ | ------ |
+| Rasendriya Ramanda Darettamarlan  | M0040277  |
+| Nicko Andreas  | M1071420  |
+| Kevin Refinaldi Berlin | A1161478  |
+| Mohammad Fahmi | A1161479 |
+| Rama Kisara | C1241611 |
+| Diya Rochima Lisakiyanto  | C0040275 |
