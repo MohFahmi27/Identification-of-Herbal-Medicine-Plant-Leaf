@@ -10,10 +10,10 @@ In Indonesia no less than 30.000 species of plants. But of the many species, mos
 - Medicinal Leaf Dataset: https://data.mendeley.com/datasets/nnytj2v3n5
 
 ## Capstone Project Team: 
-| Name | Bangkit-ID |
-| ------ | ------ |
-| Rasendriya Ramanda Darettamarlan  | M0040277  |
-| Nicko Andreas  | M1071420  |
+| Name | Bangkit-ID | Github-Profile |
+| ------ | ------ | ------ | 
+| Rasendriya Ramanda Darettamarlan  | M0040277  | https://github.com/warexpert26 |
+| Nicko Andreas  | M1071420  | https://github.com/rasendriyaramanda |
 | Kevin Refinaldi Berlin | A1161478  |
 | Mohammad Fahmi | A1161479 |
 | Rama Kisara | C1241611 |
