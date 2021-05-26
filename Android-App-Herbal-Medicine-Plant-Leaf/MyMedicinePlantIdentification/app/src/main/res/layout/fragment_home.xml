@@ -32,6 +32,7 @@
     <TextView
         android:id="@+id/textView"
         style="@style/DefaultTextView"
+        android:layout_marginStart="@dimen/dimen_small"
         android:text="@string/hello_welcome"
         android:textColor="@color/secondaryTextColor"
         android:textSize="20sp"
@@ -68,5 +69,24 @@
         app:layout_constraintStart_toEndOf="@+id/textView"
         app:layout_constraintTop_toTopOf="@+id/textView"
         tools:ignore="ContentDescription" />
+
+    <TextView
+        android:id="@+id/textView3"
+        style="@style/DefaultTextView"
+        android:layout_marginTop="@dimen/dimen_large"
+        android:text="@string/powerful_leaf"
+        android:textColor="@color/primaryTextColor"
+        android:textSize="15sp"
+        app:layout_constraintStart_toEndOf="@+id/guideline_start"
+        app:layout_constraintTop_toBottomOf="@+id/view" />
+
+    <androidx.recyclerview.widget.RecyclerView
+        android:id="@+id/rv_plants"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="@dimen/dimen_standard"
+        app:layout_constraintEnd_toStartOf="@+id/guideline_end"
+        app:layout_constraintStart_toStartOf="@+id/guideline_start"
+        app:layout_constraintTop_toBottomOf="@+id/textView3" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>

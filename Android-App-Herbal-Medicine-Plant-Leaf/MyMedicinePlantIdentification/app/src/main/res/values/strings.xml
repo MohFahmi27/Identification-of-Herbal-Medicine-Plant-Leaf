@@ -7,4 +7,6 @@
     <string name="hello_welcome">Hello, Welcome</string>
     <string name="app_description">Try take a picture and be amazed</string>
     <string name="about_fragment">About Fragment</string>
+    <string name="app_icon">App Icon</string>
+    <string name="powerful_leaf">Powerful Leaf: </string>
 </resources>

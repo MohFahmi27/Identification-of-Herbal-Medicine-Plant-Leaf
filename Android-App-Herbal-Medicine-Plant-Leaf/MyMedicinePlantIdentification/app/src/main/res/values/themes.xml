@@ -21,4 +21,8 @@
         <item name="android:textStyle">bold</item>
         <item name="android:fontFamily">@font/google_sans_font</item>
     </style>
+
+    <style name="ShapeAppearanceOverlay.App.CornerSize10Percent" parent="">
+        <item name="cornerSize">10%</item>
+    </style>
 </resources>
