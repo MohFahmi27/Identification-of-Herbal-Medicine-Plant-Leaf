@@ -1,0 +1,10 @@
+<resources>
+    <string name="app_name">Herbal App</string>
+    <string name="home">Home</string>
+    <string name="settings">Settings</string>
+    <string name="add_camera">Add Camera</string>
+    <string name="about">About</string>
+    <string name="hello_welcome">Hello, Welcome</string>
+    <string name="app_description">Try take a picture and be amazed</string>
+    <string name="about_fragment">About Fragment</string>
+</resources>
