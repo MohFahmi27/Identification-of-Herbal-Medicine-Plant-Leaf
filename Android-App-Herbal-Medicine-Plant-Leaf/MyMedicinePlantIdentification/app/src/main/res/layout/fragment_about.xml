@@ -1,17 +1,99 @@
 <?xml version="1.0" encoding="utf-8"?>
-<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<androidx.core.widget.NestedScrollView xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".about.AboutFragment">
+    tools:context=".ui.about.AboutFragment">
 
-    <TextView
-        style="@style/DefaultTextView"
-        android:text="@string/about_fragment"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent" />
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
 
-</androidx.constraintlayout.widget.ConstraintLayout>
+        <androidx.constraintlayout.widget.Guideline
+            android:id="@+id/guideline_start_about"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            app:layout_constraintGuide_begin="@dimen/dimen_standard" />
+
+        <androidx.constraintlayout.widget.Guideline
+            android:id="@+id/guideline_end_about"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            app:layout_constraintGuide_end="@dimen/dimen_standard" />
+
+        <View
+            android:id="@+id/view_about"
+            android:layout_width="0dp"
+            android:layout_height="200dp"
+            android:background="@drawable/sh_rounded_one_corner"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
+
+        <ImageView
+            android:id="@+id/img_about"
+            android:layout_width="120dp"
+            android:layout_height="120dp"
+            android:layout_marginStart="@dimen/dimen_standard"
+            android:src="@drawable/ic_tobacco"
+            app:layout_constraintBottom_toBottomOf="@+id/view_about"
+            app:layout_constraintStart_toEndOf="@id/guideline_start_about"
+            app:layout_constraintTop_toTopOf="@+id/view_about"
+            tools:ignore="ContentDescription" />
+
+        <TextView
+            android:id="@+id/textView4"
+            style="@style/DefaultTextView"
+            android:text="@string/capstone_group"
+            android:textColor="@color/secondaryTextColor"
+            android:textSize="20sp"
+            app:layout_constraintBottom_toBottomOf="@+id/img_about"
+            app:layout_constraintEnd_toStartOf="@+id/guideline_end_about"
+            app:layout_constraintStart_toEndOf="@+id/img_about"
+            app:layout_constraintTop_toTopOf="@+id/img_about"
+            app:layout_constraintVertical_bias="0.40" />
+
+        <TextView
+            style="@style/DefaultTextView"
+            android:layout_marginTop="@dimen/dimen_standard"
+            android:text="@string/app_name"
+            android:textColor="@color/secondaryTextColor"
+            android:textSize="14sp"
+            app:layout_constraintBottom_toBottomOf="@+id/view_about"
+            app:layout_constraintEnd_toEndOf="@+id/textView4"
+            app:layout_constraintStart_toStartOf="@+id/textView4"
+            app:layout_constraintTop_toBottomOf="@+id/textView4"
+            app:layout_constraintVertical_bias="0.0" />
+
+        <TextView
+            android:id="@+id/tv_description"
+            style="@style/DefaultTextView"
+            android:layout_width="0dp"
+            android:layout_marginTop="@dimen/dimen_large"
+            android:text="@string/capstone_description"
+            android:textColor="@color/primaryTextColor"
+            android:textSize="13sp"
+            app:layout_constraintEnd_toStartOf="@+id/guideline_end_about"
+            app:layout_constraintStart_toEndOf="@+id/guideline_start_about"
+            app:layout_constraintTop_toBottomOf="@+id/view_about" />
+
+        <TextView
+            style="@style/DefaultTextView"
+            android:layout_width="0dp"
+            android:layout_marginTop="@dimen/dimen_large"
+            android:background="@drawable/sh_rounded_all_corner"
+            android:lineSpacingExtra="@dimen/dimen_super_small"
+            android:padding="@dimen/dimen_large"
+            android:text="@string/capstone_group_name"
+            android:textColor="@color/primaryTextColor"
+            android:textSize="13sp"
+            app:layout_constraintEnd_toStartOf="@+id/guideline_end_about"
+            app:layout_constraintStart_toEndOf="@+id/guideline_start_about"
+            app:layout_constraintTop_toBottomOf="@+id/tv_description" />
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+
+</androidx.core.widget.NestedScrollView>

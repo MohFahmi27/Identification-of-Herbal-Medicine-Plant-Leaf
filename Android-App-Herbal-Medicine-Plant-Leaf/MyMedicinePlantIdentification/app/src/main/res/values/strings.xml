@@ -9,4 +9,19 @@
     <string name="about_fragment">About Fragment</string>
     <string name="app_icon">App Icon</string>
     <string name="powerful_leaf">Powerful Leaf: </string>
+    <string name="herbal_leaf">Herbal Leaf</string>
+    <string name="capstone_group">B21-CAP0311</string>
+    <string name="capstone_description">
+        In Indonesia no less than 30.000 species of plants. But of the many species,
+        most people do not know the benefits, especially for herbal plants.
+        So this project proposed to help people recognize the herbal plants instantly,
+        give information to people that don’t know about herbal plants.</string>
+    <string name="capstone_group_name">
+         M0040277 Rasendriya Ramanda Darettamarlan
+        \nM1071420 Nicko Andreas
+        \nA1161478 Kevin Refinaldi Berlin
+        \nA1161479 Mohammad Fahmi
+        \nC1241611 Rama Kisara
+        \nC0040275 Diya Rochima Lisakiyanto
+    </string>
 </resources>

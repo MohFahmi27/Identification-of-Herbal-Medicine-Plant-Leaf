@@ -1,4 +1,4 @@
-package com.mfahmi.mymedicineplantidentification.about
+package com.mfahmi.mymedicineplantidentification.ui.about
 
 import android.os.Bundle
 import android.view.LayoutInflater

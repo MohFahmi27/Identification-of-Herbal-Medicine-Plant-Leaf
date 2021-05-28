@@ -1,12 +1,13 @@
-package com.mfahmi.mymedicineplantidentification
+package com.mfahmi.mymedicineplantidentification.ui.main
 
 import android.os.Bundle
 import android.viewbinding.library.activity.viewBinding
 import androidx.appcompat.app.AppCompatActivity
 import androidx.fragment.app.Fragment
-import com.mfahmi.mymedicineplantidentification.about.AboutFragment
+import com.mfahmi.mymedicineplantidentification.R
 import com.mfahmi.mymedicineplantidentification.databinding.ActivityMainBinding
-import com.mfahmi.mymedicineplantidentification.home.HomeFragment
+import com.mfahmi.mymedicineplantidentification.ui.about.AboutFragment
+import com.mfahmi.mymedicineplantidentification.ui.home.HomeFragment
 
 class MainActivity : AppCompatActivity() {
     private val binding: ActivityMainBinding by viewBinding()
@@ -16,11 +17,10 @@ class MainActivity : AppCompatActivity() {
 
         binding.bottomNav.background = null
 
-        val homeFragment = HomeFragment()
-        selectedFragment(homeFragment)
+        selectedFragment(HomeFragment())
         binding.bottomNav.setOnNavigationItemSelectedListener {
             when (it.itemId) {
-                R.id.nav_bot_home -> selectedFragment(homeFragment)
+                R.id.nav_bot_home -> selectedFragment(HomeFragment())
                 R.id.nav_bot_user -> selectedFragment(AboutFragment())
             }
             true

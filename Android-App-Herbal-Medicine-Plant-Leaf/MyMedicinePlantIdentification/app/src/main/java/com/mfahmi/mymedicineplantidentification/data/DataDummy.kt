@@ -1,8 +1,13 @@
 package com.mfahmi.mymedicineplantidentification.data
 
+import androidx.lifecycle.LiveData
+import androidx.lifecycle.MutableLiveData
+import com.mfahmi.mymedicineplantidentification.data.models.Plants
+
 object DataDummy {
-    fun getPlantsDummy(): ArrayList<Plants> {
-        return arrayListOf(
+    fun getPlantsDummy(): LiveData<List<Plants>> {
+        val plantsData = MutableLiveData<List<Plants>>()
+        plantsData.value = listOf(
             Plants(
                 "Jelly Grass (Cincau)",
                 "https://5.imimg.com/data5/SS/DS/MY-10247618/basil-leaves-500x500.jpg"
@@ -24,5 +29,6 @@ object DataDummy {
                 "https://5.imimg.com/data5/SS/DS/MY-10247618/basil-leaves-500x500.jpg"
             )
         )
+        return plantsData
     }
 }
