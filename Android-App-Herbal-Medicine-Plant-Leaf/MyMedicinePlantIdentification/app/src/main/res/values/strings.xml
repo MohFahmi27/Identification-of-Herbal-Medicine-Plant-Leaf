@@ -24,4 +24,9 @@
         \nC1241611 Rama Kisara
         \nC0040275 Diya Rochima Lisakiyanto
     </string>
+    <string name="take_picture">Take Picture</string>
+    <string name="plants_name">Jelly Grass (Cincau)</string>
+    <string name="description">Description</string>
+    <string name="add_photo">Take Photo</string>
+    <string name="analyze">Analyze Photo</string>
 </resources>

@@ -1,0 +1,208 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.coordinatorlayout.widget.CoordinatorLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".ui.camera.CameraActivity">
+
+    <com.google.android.material.appbar.AppBarLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:fitsSystemWindows="true">
+
+        <com.google.android.material.appbar.CollapsingToolbarLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            app:contentScrim="@color/secondaryLightColor"
+            app:layout_scrollFlags="scroll|exitUntilCollapsed">
+
+            <androidx.constraintlayout.widget.ConstraintLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content">
+
+                <androidx.constraintlayout.widget.Guideline
+                    android:id="@+id/guideline_start_camera"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:orientation="vertical"
+                    app:layout_constraintGuide_begin="@dimen/dimen_large" />
+
+                <androidx.constraintlayout.widget.Guideline
+                    android:id="@+id/guideline_end_camera"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:orientation="vertical"
+                    app:layout_constraintGuide_end="@dimen/dimen_super_large" />
+
+                <View
+                    android:id="@+id/view_camera"
+                    android:layout_width="0dp"
+                    android:layout_height="230dp"
+                    android:background="@drawable/sh_rounded_two_corner"
+                    android:fitsSystemWindows="true"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toTopOf="parent" />
+
+                <ImageView
+                    android:id="@+id/imageView"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:src="@drawable/ic_picture"
+                    app:layout_constraintBottom_toBottomOf="@+id/view_camera"
+                    app:layout_constraintStart_toEndOf="@id/guideline_start_camera"
+                    app:layout_constraintTop_toTopOf="@+id/view_camera"
+                    app:layout_constraintVertical_bias="0.55"
+                    tools:ignore="ContentDescription" />
+
+                <TextView
+                    android:id="@+id/textView_camera"
+                    style="@style/DefaultTextView"
+                    android:text="@string/take_picture"
+                    android:textColor="@color/secondaryTextColor"
+                    android:textSize="20sp"
+                    app:layout_constraintBottom_toBottomOf="@+id/imageView"
+                    app:layout_constraintEnd_toStartOf="@+id/guideline_end_camera"
+                    app:layout_constraintHorizontal_bias="1.0"
+                    app:layout_constraintStart_toEndOf="@+id/imageView"
+                    app:layout_constraintTop_toTopOf="@+id/imageView"
+                    app:layout_constraintVertical_bias="0.40" />
+
+                <TextView
+                    android:id="@+id/textView2_camera"
+                    style="@style/DefaultTextView"
+                    android:layout_marginTop="@dimen/dimen_super_small"
+                    android:text="@string/app_description"
+                    android:textColor="@color/secondaryTextColor"
+                    app:layout_constraintEnd_toEndOf="@+id/textView_camera"
+                    app:layout_constraintTop_toBottomOf="@+id/textView_camera" />
+
+            </androidx.constraintlayout.widget.ConstraintLayout>
+
+            <androidx.appcompat.widget.Toolbar
+                android:id="@+id/toolbar_main"
+                android:layout_width="match_parent"
+                android:layout_height="?attr/actionBarSize"
+                app:layout_collapseMode="pin">
+
+                <ImageButton
+                    android:id="@+id/btn_close_camera_act"
+                    android:layout_width="42dp"
+                    android:layout_height="42dp"
+                    android:layout_marginTop="@dimen/dimen_small"
+                    android:background="@drawable/sh_rounded_transparent"
+                    android:contentDescription="@string/app_icon"
+                    android:src="@drawable/ic_cancel" />
+
+            </androidx.appcompat.widget.Toolbar>
+
+        </com.google.android.material.appbar.CollapsingToolbarLayout>
+
+    </com.google.android.material.appbar.AppBarLayout>
+
+    <androidx.core.widget.NestedScrollView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        app:layout_behavior="com.google.android.material.appbar.AppBarLayout$ScrollingViewBehavior">
+
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent">
+
+            <androidx.constraintlayout.widget.Guideline
+                android:id="@+id/guideline_start_camera2"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:orientation="vertical"
+                app:layout_constraintGuide_begin="@dimen/dimen_standard" />
+
+            <androidx.constraintlayout.widget.Guideline
+                android:id="@+id/guideline_end_camera2"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:orientation="vertical"
+                app:layout_constraintGuide_end="@dimen/dimen_standard" />
+
+            <com.google.android.material.imageview.ShapeableImageView
+                android:id="@+id/img_camera_capture"
+                android:layout_width="0dp"
+                android:layout_height="220dp"
+                android:layout_gravity="center"
+                android:layout_marginTop="@dimen/dimen_large"
+                android:elevation="@dimen/dimen_super_small"
+                android:src="@color/ic_launcher_background"
+                app:layout_constraintEnd_toStartOf="@id/guideline_end_camera2"
+                app:layout_constraintStart_toEndOf="@id/guideline_start_camera2"
+                app:layout_constraintTop_toTopOf="parent"
+                app:shapeAppearanceOverlay="@style/ShapeAppearanceOverlay.App.CornerSize10Percent" />
+
+            <TextView
+                android:id="@+id/tv_title_plants"
+                style="@style/DefaultTextView"
+                android:layout_marginTop="@dimen/dimen_standard"
+                android:text="@string/plants_name"
+                android:textColor="@color/primaryTextColor"
+                android:textSize="18sp"
+                app:layout_constraintStart_toEndOf="@id/guideline_start_camera2"
+                app:layout_constraintTop_toBottomOf="@+id/img_camera_capture" />
+
+            <TextView
+                android:id="@+id/tv_description_title"
+                style="@style/DefaultTextView"
+                android:layout_marginTop="@dimen/dimen_standard"
+                android:text="@string/description"
+                android:textColor="@android:color/darker_gray"
+                android:textSize="13sp"
+                app:layout_constraintStart_toEndOf="@id/guideline_start_camera2"
+                app:layout_constraintTop_toBottomOf="@id/tv_title_plants" />
+
+            <TextView
+                android:id="@+id/tv_description_plant"
+                style="@style/DefaultTextView"
+                android:layout_width="0dp"
+                android:layout_marginTop="@dimen/dimen_small"
+                android:text="@string/capstone_description"
+                android:textColor="@color/primaryTextColor"
+                android:textSize="14sp"
+                app:layout_constraintEnd_toStartOf="@+id/guideline_end_camera2"
+                app:layout_constraintHorizontal_bias="0.0"
+                app:layout_constraintStart_toEndOf="@id/guideline_start_camera2"
+                app:layout_constraintTop_toBottomOf="@id/tv_description_title" />
+
+        </androidx.constraintlayout.widget.ConstraintLayout>
+
+    </androidx.core.widget.NestedScrollView>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_gravity="bottom"
+        android:padding="@dimen/dimen_standard"
+        android:weightSum="2">
+
+        <androidx.appcompat.widget.AppCompatButton
+            android:id="@+id/btn_add_photo"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginHorizontal="@dimen/dimen_small"
+            android:layout_weight="1"
+            android:background="@drawable/btn_color"
+            android:elevation="2dp"
+            android:text="@string/add_photo"
+            android:textColor="@color/secondaryTextColor" />
+
+        <androidx.appcompat.widget.AppCompatButton
+            android:id="@+id/btn_analyze_photo"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginHorizontal="@dimen/dimen_small"
+            android:layout_weight="1"
+            android:background="@drawable/btn_outlined_color"
+            android:elevation="2dp"
+            android:text="@string/analyze"
+            android:textColor="@color/primaryTextColor" />
+
+    </LinearLayout>
+
+</androidx.coordinatorlayout.widget.CoordinatorLayout>

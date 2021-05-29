@@ -50,21 +50,21 @@
             android:text="@string/capstone_group"
             android:textColor="@color/secondaryTextColor"
             android:textSize="20sp"
+            android:layout_marginEnd="@dimen/dimen_large"
             app:layout_constraintBottom_toBottomOf="@+id/img_about"
             app:layout_constraintEnd_toStartOf="@+id/guideline_end_about"
+            app:layout_constraintHorizontal_bias="1.0"
             app:layout_constraintStart_toEndOf="@+id/img_about"
             app:layout_constraintTop_toTopOf="@+id/img_about"
             app:layout_constraintVertical_bias="0.40" />
 
         <TextView
             style="@style/DefaultTextView"
-            android:layout_marginTop="@dimen/dimen_standard"
+            android:layout_marginTop="@dimen/dimen_super_small"
             android:text="@string/app_name"
             android:textColor="@color/secondaryTextColor"
-            android:textSize="14sp"
             app:layout_constraintBottom_toBottomOf="@+id/view_about"
             app:layout_constraintEnd_toEndOf="@+id/textView4"
-            app:layout_constraintStart_toStartOf="@+id/textView4"
             app:layout_constraintTop_toBottomOf="@+id/textView4"
             app:layout_constraintVertical_bias="0.0" />
 
@@ -84,7 +84,7 @@
             style="@style/DefaultTextView"
             android:layout_width="0dp"
             android:layout_marginTop="@dimen/dimen_large"
-            android:background="@drawable/sh_rounded_all_corner"
+            android:background="@drawable/sh_rounded_two_corner"
             android:lineSpacingExtra="@dimen/dimen_super_small"
             android:padding="@dimen/dimen_large"
             android:text="@string/capstone_group_name"
