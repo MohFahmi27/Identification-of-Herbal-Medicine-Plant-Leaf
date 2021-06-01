@@ -10,9 +10,11 @@ import android.viewbinding.library.activity.viewBinding
 import androidx.activity.result.contract.ActivityResultContracts
 import androidx.appcompat.app.AppCompatActivity
 import androidx.core.app.ActivityCompat
+import com.mfahmi.mymedicineplantidentification.R
 import com.mfahmi.mymedicineplantidentification.databinding.ActivityCameraBinding
 import com.mfahmi.mymedicineplantidentification.domain.models.PlantDomain
 import com.mfahmi.mymedicineplantidentification.ml.MedicineLeafModel
+import com.shashank.sony.fancytoastlib.FancyToast
 import org.koin.androidx.viewmodel.ext.android.viewModel
 import org.tensorflow.lite.gpu.CompatibilityList
 import org.tensorflow.lite.support.image.TensorImage
@@ -68,6 +70,13 @@ class CameraActivity : AppCompatActivity() {
                     bitmapResult as Bitmap
                 )
             )
+            FancyToast.makeText(
+                this,
+                getString(R.string.msg_save_bookmark),
+                FancyToast.LENGTH_SHORT,
+                FancyToast.INFO,
+                false
+            ).show()
             binding.btnSaveBookmark.setVisibility(false)
         }
     }

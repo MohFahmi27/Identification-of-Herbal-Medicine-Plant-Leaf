@@ -38,18 +38,20 @@
                 <View
                     android:id="@+id/view_camera"
                     android:layout_width="0dp"
-                    android:layout_height="200dp"
+                    android:layout_height="190dp"
                     android:background="@drawable/sh_rounded_two_corner"
-                    android:fitsSystemWindows="true"
+                    android:layout_marginTop="@dimen/dimen_small"
+                    android:layout_marginHorizontal="@dimen/dimen_small"
                     app:layout_constraintEnd_toEndOf="parent"
                     app:layout_constraintStart_toStartOf="parent"
                     app:layout_constraintTop_toTopOf="parent" />
 
                 <ImageView
                     android:id="@+id/imageView"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
+                    android:layout_width="120dp"
+                    android:layout_height="120dp"
                     android:src="@drawable/ic_picture"
+                    android:layout_marginStart="@dimen/dimen_standard"
                     app:layout_constraintBottom_toBottomOf="@+id/view_camera"
                     app:layout_constraintStart_toEndOf="@id/guideline_start_camera"
                     app:layout_constraintTop_toTopOf="@+id/view_camera"
@@ -62,20 +64,25 @@
                     android:text="@string/take_picture"
                     android:textColor="@color/secondaryTextColor"
                     android:textSize="20sp"
-                    app:layout_constraintBottom_toBottomOf="@+id/imageView"
+                    app:layout_constraintBottom_toBottomOf="@+id/view_camera"
                     app:layout_constraintEnd_toStartOf="@+id/guideline_end_camera"
                     app:layout_constraintHorizontal_bias="1.0"
                     app:layout_constraintStart_toEndOf="@+id/imageView"
-                    app:layout_constraintTop_toTopOf="@+id/imageView"
+                    app:layout_constraintTop_toTopOf="@+id/view_camera"
                     app:layout_constraintVertical_bias="0.40" />
 
                 <TextView
                     android:id="@+id/textView2_camera"
                     style="@style/DefaultTextView"
+                    android:layout_width="0dp"
                     android:layout_marginTop="@dimen/dimen_super_small"
+                    android:textAlignment="textEnd"
+                    android:layout_marginStart="@dimen/dimen_standard"
                     android:text="@string/app_description"
+                    android:textStyle="normal"
                     android:textColor="@color/secondaryTextColor"
                     app:layout_constraintEnd_toEndOf="@+id/textView_camera"
+                    app:layout_constraintStart_toEndOf="@+id/imageView"
                     app:layout_constraintTop_toBottomOf="@+id/textView_camera" />
 
             </androidx.constraintlayout.widget.ConstraintLayout>
@@ -90,8 +97,7 @@
                     android:id="@+id/btn_close_camera_act"
                     android:layout_width="38dp"
                     android:layout_height="38dp"
-                    android:layout_marginTop="@dimen/dimen_small"
-                    android:background="@drawable/sh_rounded_transparent"
+                    android:background="@android:color/transparent"
                     android:contentDescription="@string/app_icon"
                     android:src="@drawable/ic_cancel" />
 

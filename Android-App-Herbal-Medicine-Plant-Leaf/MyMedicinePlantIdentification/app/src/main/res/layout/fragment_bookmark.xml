@@ -26,20 +26,22 @@
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:orientation="vertical"
-                    app:layout_constraintGuide_begin="@dimen/dimen_standard" />
+                    app:layout_constraintGuide_begin="@dimen/dimen_large" />
 
                 <androidx.constraintlayout.widget.Guideline
                     android:id="@+id/guideline_end_about"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:orientation="vertical"
-                    app:layout_constraintGuide_end="@dimen/dimen_standard" />
+                    app:layout_constraintGuide_end="@dimen/dimen_super_large" />
 
                 <View
                     android:id="@+id/view_about"
                     android:layout_width="0dp"
-                    android:layout_height="200dp"
-                    android:background="@drawable/sh_rounded_one_corner"
+                    android:layout_height="190dp"
+                    android:layout_marginHorizontal="@dimen/dimen_small"
+                    android:layout_marginTop="@dimen/dimen_small"
+                    android:background="@drawable/sh_rounded_two_corner"
                     app:layout_constraintEnd_toEndOf="parent"
                     app:layout_constraintStart_toStartOf="parent"
                     app:layout_constraintTop_toTopOf="parent" />
@@ -49,7 +51,7 @@
                     android:layout_width="120dp"
                     android:layout_height="120dp"
                     android:layout_marginStart="@dimen/dimen_standard"
-                    android:src="@drawable/ic_notebook"
+                    android:src="@drawable/ic_bookmark"
                     app:layout_constraintBottom_toBottomOf="@+id/textView5"
                     app:layout_constraintStart_toEndOf="@id/guideline_start_about"
                     app:layout_constraintTop_toTopOf="@+id/textView4"
@@ -59,27 +61,32 @@
                 <TextView
                     android:id="@+id/textView4"
                     style="@style/DefaultTextView"
-                    android:layout_marginEnd="@dimen/dimen_large"
                     android:text="@string/your_bookmark"
                     android:textColor="@color/secondaryTextColor"
                     android:textSize="20sp"
-                    app:layout_constraintBottom_toBottomOf="@+id/view_about"
+                    app:layout_constraintBottom_toBottomOf="parent"
                     app:layout_constraintEnd_toStartOf="@+id/guideline_end_about"
                     app:layout_constraintHorizontal_bias="1.0"
                     app:layout_constraintStart_toEndOf="@+id/img_about"
-                    app:layout_constraintTop_toTopOf="parent"
-                    app:layout_constraintVertical_bias="0.40"  />
+                    app:layout_constraintTop_toTopOf="@+id/view_about"
+                    app:layout_constraintVertical_bias="0.40" />
 
                 <TextView
                     android:id="@+id/textView5"
                     style="@style/DefaultTextView"
+                    android:layout_width="0dp"
                     android:layout_marginTop="@dimen/dimen_super_small"
-                    android:text="@string/app_name"
+                    android:text="@string/bookmark_desc"
                     android:textColor="@color/secondaryTextColor"
+                    android:textStyle="normal"
+                    android:textAlignment="textEnd"
+                    android:layout_marginStart="@dimen/dimen_standard"
                     app:layout_constraintBottom_toBottomOf="@+id/view_about"
                     app:layout_constraintEnd_toEndOf="@+id/textView4"
+                    app:layout_constraintStart_toEndOf="@+id/img_about"
                     app:layout_constraintTop_toBottomOf="@+id/textView4"
                     app:layout_constraintVertical_bias="0.0" />
+
             </androidx.constraintlayout.widget.ConstraintLayout>
         </com.google.android.material.appbar.CollapsingToolbarLayout>
 
@@ -89,10 +96,10 @@
         android:id="@+id/rv_bookmark_capture"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_marginStart="@dimen/dimen_standard"
-        android:layout_marginTop="@dimen/dimen_standard"
-        android:layout_marginEnd="@dimen/dimen_standard"
-        tools:listitem="@layout/items_bookmark_plants"
-        app:layout_behavior="com.google.android.material.appbar.AppBarLayout$ScrollingViewBehavior" />
+        android:layout_marginHorizontal="@dimen/dimen_standard"
+        android:layout_marginTop="@dimen/dimen_small"
+        android:layout_marginBottom="50dp"
+        app:layout_behavior="com.google.android.material.appbar.AppBarLayout$ScrollingViewBehavior"
+        tools:listitem="@layout/items_bookmark_plants" />
 
 </androidx.coordinatorlayout.widget.CoordinatorLayout>

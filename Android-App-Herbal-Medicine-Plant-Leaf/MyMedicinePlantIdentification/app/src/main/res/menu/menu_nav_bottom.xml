@@ -2,7 +2,7 @@
 <menu xmlns:android="http://schemas.android.com/apk/res/android">
 
     <item
-        android:id="@+id/nav_bot_home"
+        android:id="@+id/homeFragment"
         android:icon="@drawable/ic_home"
         android:title="@string/home" />
 
@@ -12,8 +12,8 @@
         android:title="" />
 
     <item
-        android:id="@+id/nav_bot_user"
+        android:id="@+id/bookmarkFragment"
         android:icon="@drawable/ic_person"
-        android:title="@string/history" />
+        android:title="@string/bookmark" />
 
 </menu>

@@ -1,7 +1,7 @@
 package com.mfahmi.mymedicineplantidentification.domain.di
 
 import androidx.room.Room
-import com.mfahmi.mymedicineplantidentification.data.source.PlantsRepository
+import com.mfahmi.mymedicineplantidentification.data.PlantsRepository
 import com.mfahmi.mymedicineplantidentification.data.source.local.LocalDataSource
 import com.mfahmi.mymedicineplantidentification.data.source.local.db.PlantsDatabase
 import com.mfahmi.mymedicineplantidentification.domain.repository.PlantRepositoryInterface

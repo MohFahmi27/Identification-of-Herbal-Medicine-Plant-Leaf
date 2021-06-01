@@ -25,8 +25,10 @@
                 <View
                     android:id="@+id/view"
                     android:layout_width="0dp"
-                    android:layout_height="200dp"
-                    android:background="@drawable/sh_rounded_one_corner"
+                    android:layout_height="190dp"
+                    android:layout_marginTop="@dimen/dimen_small"
+                    android:layout_marginHorizontal="@dimen/dimen_small"
+                    android:background="@drawable/sh_rounded_two_corner"
                     app:layout_constraintEnd_toEndOf="parent"
                     app:layout_constraintStart_toStartOf="parent"
                     app:layout_constraintTop_toTopOf="parent" />
@@ -39,9 +41,9 @@
                     android:textColor="@color/secondaryTextColor"
                     android:textSize="20sp"
                     app:layout_constraintBottom_toBottomOf="@+id/view"
-                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintStart_toStartOf="@id/view"
+                    app:layout_constraintEnd_toEndOf="@id/view"
                     app:layout_constraintHorizontal_bias="0.0"
-                    app:layout_constraintStart_toStartOf="parent"
                     app:layout_constraintTop_toTopOf="@+id/view"
                     app:layout_constraintVertical_bias="0.40" />
 
@@ -61,10 +63,10 @@
 
                 <ImageView
                     android:id="@+id/imageView"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:layout_marginEnd="@dimen/dimen_standard"
-                    android:src="@drawable/ic_plant"
+                    android:layout_width="120dp"
+                    android:layout_height="120dp"
+                    android:layout_marginEnd="@dimen/dimen_large"
+                    android:src="@drawable/ic_placeholder"
                     app:layout_constraintBottom_toBottomOf="@+id/textView2"
                     app:layout_constraintEnd_toEndOf="@+id/view"
                     app:layout_constraintHorizontal_bias="1.0"
@@ -80,7 +82,7 @@
 
     <androidx.core.widget.NestedScrollView
         android:layout_width="match_parent"
-        android:layout_height="match_parent"
+        android:layout_height="wrap_content"
         app:layout_behavior="com.google.android.material.appbar.AppBarLayout$ScrollingViewBehavior">
 
         <androidx.constraintlayout.widget.ConstraintLayout
@@ -116,11 +118,12 @@
                 android:layout_width="0dp"
                 android:layout_height="wrap_content"
                 android:layout_marginTop="@dimen/dimen_standard"
-                android:layout_marginBottom="@dimen/dimen_super_large"
+                android:layout_marginBottom="50dp"
+                app:layout_constraintBottom_toBottomOf="parent"
                 app:layout_constraintEnd_toStartOf="@+id/guideline_end_about"
                 app:layout_constraintStart_toStartOf="@+id/guideline_start_about"
                 app:layout_constraintTop_toBottomOf="@+id/textView3"
-                app:layout_constraintBottom_toBottomOf="parent"/>
+                tools:listitem="@layout/items_home_plants"/>
 
         </androidx.constraintlayout.widget.ConstraintLayout>
 

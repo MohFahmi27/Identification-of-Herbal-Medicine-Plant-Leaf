@@ -1,4 +1,4 @@
-package com.mfahmi.mymedicineplantidentification.data.source
+package com.mfahmi.mymedicineplantidentification.data
 
 import com.mfahmi.mymedicineplantidentification.data.source.local.LocalDataSource
 import com.mfahmi.mymedicineplantidentification.domain.models.PlantDomain

@@ -7,10 +7,14 @@
     android:orientation="vertical"
     tools:context=".ui.main.MainActivity">
 
-    <FrameLayout
-        android:id="@+id/frm_main"
+    <androidx.fragment.app.FragmentContainerView
+        android:id="@+id/frg_container_view"
+        android:name="androidx.navigation.fragment.NavHostFragment"
         android:layout_width="match_parent"
-        android:layout_height="match_parent" />
+        android:layout_height="match_parent"
+        app:defaultNavHost="true"
+        app:layout_behavior="com.google.android.material.behavior.HideBottomViewOnScrollBehavior"
+        app:navGraph="@navigation/nav_main" />
 
     <com.google.android.material.bottomappbar.BottomAppBar
         android:id="@+id/bottom_app_bar"
@@ -18,7 +22,8 @@
         android:layout_height="wrap_content"
         android:layout_gravity="bottom"
         app:fabCradleMargin="15dp"
-        app:layout_behavior="com.google.android.material.bottomappbar.BottomAppBar$Behavior">
+        app:hideOnScroll="true"
+        app:layout_scrollFlags="scroll|enterAlways">
 
         <com.google.android.material.bottomnavigation.BottomNavigationView
             android:id="@+id/bottom_nav"

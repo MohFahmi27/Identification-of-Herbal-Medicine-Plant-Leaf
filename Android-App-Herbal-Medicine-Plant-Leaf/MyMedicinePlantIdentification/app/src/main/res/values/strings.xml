@@ -21,6 +21,8 @@
     <string name="analyze">Analyze Photo</string>
     <string name="your_bookmark">Your Bookmark</string>
     <string name="push_analyze">Push Analyze Button to be amazed</string>
-    <string name="history">History</string>
     <string name="bookmark_result">Bookmark Result</string>
+    <string name="msg_save_bookmark">Now you\'ve bookmarked the new journey</string>
+    <string name="bookmark">Bookmark</string>
+    <string name="bookmark_desc">This is where you saved the journey</string>
 </resources>
