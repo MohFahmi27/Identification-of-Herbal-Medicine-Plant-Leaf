@@ -1,6 +1,7 @@
 package com.mfahmi.mymedicineplantidentification.ui.camera
 
 import android.Manifest
+import android.annotation.SuppressLint
 import android.content.pm.PackageManager
 import android.graphics.Bitmap
 import android.os.Bundle
@@ -10,13 +11,19 @@ import androidx.activity.result.contract.ActivityResultContracts
 import androidx.appcompat.app.AppCompatActivity
 import androidx.core.app.ActivityCompat
 import com.mfahmi.mymedicineplantidentification.databinding.ActivityCameraBinding
-import com.mfahmi.mymedicineplantidentification.ml.LeafModel
+import com.mfahmi.mymedicineplantidentification.domain.models.PlantDomain
+import com.mfahmi.mymedicineplantidentification.ml.MedicineLeafModel
+import org.koin.androidx.viewmodel.ext.android.viewModel
 import org.tensorflow.lite.gpu.CompatibilityList
 import org.tensorflow.lite.support.image.TensorImage
 import org.tensorflow.lite.support.model.Model
+import java.time.LocalDateTime
+import java.time.format.DateTimeFormatter
 
+@SuppressLint("NewApi")
 class CameraActivity : AppCompatActivity() {
     private val binding: ActivityCameraBinding by viewBinding()
+    private val viewModel: CameraViewModel by viewModel()
     private var bitmapResult: Bitmap? = null
     private val takePicture =
         registerForActivityResult(ActivityResultContracts.TakePicturePreview()) { bitmap ->
@@ -25,13 +32,17 @@ class CameraActivity : AppCompatActivity() {
                 bitmapResult = bitmap
             }
         }
-    private val leafModel: LeafModel by lazy {
+    private val leafModel: MedicineLeafModel by lazy {
         val options = if (CompatibilityList().isDelegateSupportedOnThisDevice) {
             Model.Options.Builder().setDevice(Model.Device.GPU).build()
         } else {
             Model.Options.Builder().setNumThreads(4).build()
         }
-        LeafModel.newInstance(this, options)
+        MedicineLeafModel.newInstance(this, options)
+    }
+    private val getDate: String by lazy {
+        val dateFormatter = DateTimeFormatter.ofPattern("dd - MM - yyyy")
+        LocalDateTime.now().format(dateFormatter)
     }
 
     override fun onCreate(savedInstanceState: Bundle?) {
@@ -46,6 +57,18 @@ class CameraActivity : AppCompatActivity() {
         }
         binding.btnAnalyzePhoto.setOnClickListener {
             setResultAnalyze()
+            binding.btnSaveBookmark.setVisibility(true)
+        }
+        binding.btnSaveBookmark.setOnClickListener {
+            viewModel.insertPlantData(
+                PlantDomain(
+                    binding.tvTitlePlants.text.toString(),
+                    binding.tvDescriptionPlant.text.toString(),
+                    getDate,
+                    bitmapResult as Bitmap
+                )
+            )
+            binding.btnSaveBookmark.setVisibility(false)
         }
     }
 
@@ -84,10 +107,7 @@ class CameraActivity : AppCompatActivity() {
                     .take(1)
             probability.forEach {
                 with(binding) {
-                    tvTitlePlants.setVisibility(true)
-                    tvDescriptionTitle.setVisibility(true)
-                    tvDescriptionPlant.setVisibility(true)
-                    btnSaveBookmark.setVisibility(true)
+                    grpContentGroup.setVisibility(true)
                     tvTitlePlants.text = it.label
                 }
             }
@@ -96,6 +116,11 @@ class CameraActivity : AppCompatActivity() {
 
     private fun View.setVisibility(state: Boolean) {
         if (state) this.visibility = View.VISIBLE else this.visibility = View.GONE
+    }
+
+    override fun onDestroy() {
+        super.onDestroy()
+        leafModel.close()
     }
 
     companion object {

@@ -88,8 +88,8 @@
 
                 <ImageButton
                     android:id="@+id/btn_close_camera_act"
-                    android:layout_width="42dp"
-                    android:layout_height="42dp"
+                    android:layout_width="38dp"
+                    android:layout_height="38dp"
                     android:layout_marginTop="@dimen/dimen_small"
                     android:background="@drawable/sh_rounded_transparent"
                     android:contentDescription="@string/app_icon"
@@ -136,6 +136,13 @@
                 app:layout_constraintTop_toTopOf="parent"
                 app:shapeAppearanceOverlay="@style/ShapeAppearanceOverlay.App.CornerSize10Percent" />
 
+            <androidx.constraintlayout.widget.Group
+                android:id="@+id/grp_content_group"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:visibility="gone"
+                app:constraint_referenced_ids="btn_save_bookmark,tv_title_plants,tv_description_title,tv_description_plant" />
+
             <TextView
                 android:id="@+id/tv_title_plants"
                 style="@style/DefaultTextView"
@@ -143,7 +150,6 @@
                 android:textAllCaps="true"
                 android:textColor="@color/primaryTextColor"
                 android:textSize="18sp"
-                android:visibility="invisible"
                 app:layout_constraintStart_toEndOf="@id/guideline_start_camera2"
                 app:layout_constraintTop_toBottomOf="@+id/img_camera_capture" />
 
@@ -154,7 +160,6 @@
                 android:text="@string/description"
                 android:textColor="@android:color/darker_gray"
                 android:textSize="13sp"
-                android:visibility="invisible"
                 app:layout_constraintStart_toEndOf="@id/guideline_start_camera2"
                 app:layout_constraintTop_toBottomOf="@id/tv_title_plants" />
 
@@ -166,7 +171,6 @@
                 android:text="@string/capstone_description"
                 android:textColor="@color/primaryTextColor"
                 android:textSize="14sp"
-                android:visibility="invisible"
                 app:layout_constraintEnd_toStartOf="@+id/guideline_end_camera2"
                 app:layout_constraintHorizontal_bias="0.0"
                 app:layout_constraintStart_toEndOf="@id/guideline_start_camera2"
@@ -180,7 +184,6 @@
                 android:background="@drawable/btn_color"
                 android:text="@string/bookmark_result"
                 android:textColor="@color/secondaryTextColor"
-                android:visibility="invisible"
                 app:layout_constraintBottom_toBottomOf="parent"
                 app:layout_constraintEnd_toEndOf="@id/tv_description_plant"
                 app:layout_constraintStart_toStartOf="@id/tv_description_plant"

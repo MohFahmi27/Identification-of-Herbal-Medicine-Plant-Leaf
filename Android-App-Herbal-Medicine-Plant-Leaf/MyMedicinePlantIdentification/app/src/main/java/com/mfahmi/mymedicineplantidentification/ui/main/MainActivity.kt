@@ -7,7 +7,7 @@ import androidx.appcompat.app.AppCompatActivity
 import androidx.fragment.app.Fragment
 import com.mfahmi.mymedicineplantidentification.R
 import com.mfahmi.mymedicineplantidentification.databinding.ActivityMainBinding
-import com.mfahmi.mymedicineplantidentification.ui.about.AboutFragment
+import com.mfahmi.mymedicineplantidentification.ui.bookmark.BookmarkFragment
 import com.mfahmi.mymedicineplantidentification.ui.camera.CameraActivity
 import com.mfahmi.mymedicineplantidentification.ui.home.HomeFragment
 
@@ -23,7 +23,7 @@ class MainActivity : AppCompatActivity() {
         binding.bottomNav.setOnNavigationItemSelectedListener {
             when (it.itemId) {
                 R.id.nav_bot_home -> selectedFragment(HomeFragment())
-                R.id.nav_bot_user -> selectedFragment(AboutFragment())
+                R.id.nav_bot_user -> selectedFragment(BookmarkFragment())
             }
             true
         }

@@ -1,6 +1,74 @@
 <?xml version="1.0" encoding="utf-8"?>
-<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<androidx.cardview.widget.CardView xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
-    android:layout_height="match_parent">
+    android:layout_height="wrap_content"
+    android:layout_marginHorizontal="@dimen/dimen_super_small"
+    android:layout_marginVertical="@dimen/dimen_small"
+    app:cardElevation="@dimen/dimen_super_small"
+    app:cardCornerRadius="@dimen/dimen_standard">
 
-</androidx.constraintlayout.widget.ConstraintLayout>
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:orientation="vertical">
+
+        <com.google.android.material.imageview.ShapeableImageView
+            android:id="@+id/img_bookmark"
+            android:layout_width="120dp"
+            android:layout_height="150dp"
+            android:layout_gravity="center"
+            android:layout_margin="@dimen/dimen_standard"
+            android:elevation="2dp"
+            android:scaleType="centerCrop"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0.0"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            app:shapeAppearanceOverlay="@style/ShapeAppearanceOverlay.App.CornerSize10Percent"
+            tools:src="@tools:sample/avatars" />
+
+        <TextView
+            android:id="@+id/tv_title"
+            style="@style/DefaultTextView"
+            android:layout_width="0dp"
+            android:layout_marginStart="@dimen/dimen_standard"
+            android:layout_marginEnd="@dimen/dimen_small"
+            android:text="@string/herbal_leaf"
+            android:textSize="18sp"
+            android:textColor="@color/primaryTextColor"
+            app:layout_constraintBottom_toBottomOf="@+id/img_bookmark"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0.0"
+            app:layout_constraintStart_toEndOf="@+id/img_bookmark"
+            app:layout_constraintTop_toTopOf="@+id/img_bookmark"
+            app:layout_constraintVertical_bias="0.15" />
+
+        <TextView
+            android:id="@+id/tv_bookmark_description"
+            style="@style/DefaultTextView"
+            android:layout_width="0dp"
+            android:layout_marginHorizontal="@dimen/dimen_standard"
+            android:layout_marginTop="@dimen/dimen_super_small"
+            android:textSize="13sp"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toEndOf="@+id/img_bookmark"
+            app:layout_constraintTop_toBottomOf="@+id/tv_title"
+            tools:text="this leaf something something about..." />
+
+        <TextView
+            android:id="@+id/tv_bookmark_date"
+            style="@style/DefaultTextView"
+            android:textSize="13sp"
+            android:layout_marginTop="@dimen/dimen_standard"
+            app:layout_constraintEnd_toEndOf="@+id/tv_bookmark_description"
+            app:layout_constraintHorizontal_bias="0.0"
+            app:layout_constraintStart_toStartOf="@+id/tv_bookmark_description"
+            app:layout_constraintTop_toBottomOf="@id/tv_bookmark_description"
+            tools:text="01 - 06 - 2021" />
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+
+</androidx.cardview.widget.CardView>
