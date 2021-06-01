@@ -14,8 +14,12 @@
         android:supportsRtl="true"
         android:theme="@style/Theme.MyMedicinePlantIdentification.NoActionBar"
         tools:ignore="AllowBackup">
-        <activity android:name=".ui.camera.CameraActivity" />
-        <activity android:name=".ui.splash.SplashActivity">
+        <activity
+            android:name=".ui.camera.CameraActivity"
+            android:screenOrientation="portrait"
+            tools:ignore="LockedOrientationActivity" />
+        <activity android:name=".ui.splash.SplashActivity" android:screenOrientation="portrait"
+            tools:ignore="LockedOrientationActivity">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 

@@ -8,7 +8,7 @@
     <string name="app_description">Try take a picture and be amazed</string>
     <string name="about_fragment">About Fragment</string>
     <string name="app_icon">App Icon</string>
-    <string name="powerful_leaf">Powerful Leaf: </string>
+    <string name="today_news">Today News: </string>
     <string name="herbal_leaf">Herbal Leaf</string>
     <string name="capstone_group">B21-CAP0311</string>
     <string name="capstone_description">
@@ -29,4 +29,8 @@
     <string name="description">Description</string>
     <string name="add_photo">Take Photo</string>
     <string name="analyze">Analyze Photo</string>
+    <string name="your_bookmark">Your Bookmark</string>
+    <string name="push_analyze">Push Analyze Button to be amazed</string>
+    <string name="history">History</string>
+    <string name="bookmark_result">Bookmark Result</string>
 </resources>

@@ -38,7 +38,7 @@
                 <View
                     android:id="@+id/view_camera"
                     android:layout_width="0dp"
-                    android:layout_height="230dp"
+                    android:layout_height="200dp"
                     android:background="@drawable/sh_rounded_two_corner"
                     android:fitsSystemWindows="true"
                     app:layout_constraintEnd_toEndOf="parent"
@@ -130,8 +130,7 @@
                 android:layout_height="220dp"
                 android:layout_gravity="center"
                 android:layout_marginTop="@dimen/dimen_large"
-                android:elevation="@dimen/dimen_super_small"
-                android:src="@color/ic_launcher_background"
+                android:src="@drawable/ic_add_photo"
                 app:layout_constraintEnd_toStartOf="@id/guideline_end_camera2"
                 app:layout_constraintStart_toEndOf="@id/guideline_start_camera2"
                 app:layout_constraintTop_toTopOf="parent"
@@ -141,9 +140,10 @@
                 android:id="@+id/tv_title_plants"
                 style="@style/DefaultTextView"
                 android:layout_marginTop="@dimen/dimen_standard"
-                android:text="@string/plants_name"
+                android:textAllCaps="true"
                 android:textColor="@color/primaryTextColor"
                 android:textSize="18sp"
+                android:visibility="invisible"
                 app:layout_constraintStart_toEndOf="@id/guideline_start_camera2"
                 app:layout_constraintTop_toBottomOf="@+id/img_camera_capture" />
 
@@ -154,6 +154,7 @@
                 android:text="@string/description"
                 android:textColor="@android:color/darker_gray"
                 android:textSize="13sp"
+                android:visibility="invisible"
                 app:layout_constraintStart_toEndOf="@id/guideline_start_camera2"
                 app:layout_constraintTop_toBottomOf="@id/tv_title_plants" />
 
@@ -165,44 +166,66 @@
                 android:text="@string/capstone_description"
                 android:textColor="@color/primaryTextColor"
                 android:textSize="14sp"
+                android:visibility="invisible"
                 app:layout_constraintEnd_toStartOf="@+id/guideline_end_camera2"
                 app:layout_constraintHorizontal_bias="0.0"
                 app:layout_constraintStart_toEndOf="@id/guideline_start_camera2"
                 app:layout_constraintTop_toBottomOf="@id/tv_description_title" />
 
+            <androidx.appcompat.widget.AppCompatButton
+                android:id="@+id/btn_save_bookmark"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_marginVertical="@dimen/dimen_standard"
+                android:background="@drawable/btn_color"
+                android:text="@string/bookmark_result"
+                android:textColor="@color/secondaryTextColor"
+                android:visibility="invisible"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintEnd_toEndOf="@id/tv_description_plant"
+                app:layout_constraintStart_toStartOf="@id/tv_description_plant"
+                app:layout_constraintTop_toBottomOf="@id/tv_description_plant" />
+
         </androidx.constraintlayout.widget.ConstraintLayout>
 
     </androidx.core.widget.NestedScrollView>
 
-    <LinearLayout
+    <com.google.android.material.bottomappbar.BottomAppBar
+        android:id="@+id/bottom_app_bar_camera"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_gravity="bottom"
-        android:padding="@dimen/dimen_standard"
-        android:weightSum="2">
+        android:layout_gravity="bottom">
 
-        <androidx.appcompat.widget.AppCompatButton
-            android:id="@+id/btn_add_photo"
-            android:layout_width="0dp"
-            android:layout_height="wrap_content"
-            android:layout_marginHorizontal="@dimen/dimen_small"
-            android:layout_weight="1"
-            android:background="@drawable/btn_color"
-            android:elevation="2dp"
-            android:text="@string/add_photo"
-            android:textColor="@color/secondaryTextColor" />
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_marginVertical="@dimen/dimen_small"
+            android:layout_marginEnd="@dimen/dimen_standard"
+            android:weightSum="2">
 
-        <androidx.appcompat.widget.AppCompatButton
-            android:id="@+id/btn_analyze_photo"
-            android:layout_width="0dp"
-            android:layout_height="wrap_content"
-            android:layout_marginHorizontal="@dimen/dimen_small"
-            android:layout_weight="1"
-            android:background="@drawable/btn_outlined_color"
-            android:elevation="2dp"
-            android:text="@string/analyze"
-            android:textColor="@color/primaryTextColor" />
+            <androidx.appcompat.widget.AppCompatButton
+                android:id="@+id/btn_add_photo"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:background="@drawable/btn_color"
+                android:elevation="2dp"
+                android:text="@string/add_photo"
+                android:textColor="@color/secondaryTextColor" />
 
-    </LinearLayout>
+            <androidx.appcompat.widget.AppCompatButton
+                android:id="@+id/btn_analyze_photo"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="@dimen/dimen_small"
+                android:layout_weight="1"
+                android:background="@drawable/btn_outlined_color"
+                android:elevation="2dp"
+                android:text="@string/analyze"
+                android:textColor="@color/primaryTextColor" />
+
+        </LinearLayout>
+
+    </com.google.android.material.bottomappbar.BottomAppBar>
 
 </androidx.coordinatorlayout.widget.CoordinatorLayout>
