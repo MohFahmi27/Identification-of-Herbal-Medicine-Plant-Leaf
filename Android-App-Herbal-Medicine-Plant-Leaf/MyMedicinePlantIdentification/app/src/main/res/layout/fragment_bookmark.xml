@@ -1,0 +1,98 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.coordinatorlayout.widget.CoordinatorLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".ui.bookmark.BookmarkFragment">
+
+    <com.google.android.material.appbar.AppBarLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:fitsSystemWindows="true">
+
+        <com.google.android.material.appbar.CollapsingToolbarLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            app:contentScrim="@color/secondaryColor"
+            app:layout_scrollFlags="scroll|exitUntilCollapsed">
+
+            <androidx.constraintlayout.widget.ConstraintLayout
+                android:layout_width="match_parent"
+                android:layout_height="match_parent">
+
+                <androidx.constraintlayout.widget.Guideline
+                    android:id="@+id/guideline_start_about"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:orientation="vertical"
+                    app:layout_constraintGuide_begin="@dimen/dimen_standard" />
+
+                <androidx.constraintlayout.widget.Guideline
+                    android:id="@+id/guideline_end_about"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:orientation="vertical"
+                    app:layout_constraintGuide_end="@dimen/dimen_standard" />
+
+                <View
+                    android:id="@+id/view_about"
+                    android:layout_width="0dp"
+                    android:layout_height="200dp"
+                    android:background="@drawable/sh_rounded_one_corner"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toTopOf="parent" />
+
+                <ImageView
+                    android:id="@+id/img_about"
+                    android:layout_width="120dp"
+                    android:layout_height="120dp"
+                    android:layout_marginStart="@dimen/dimen_standard"
+                    android:src="@drawable/ic_notebook"
+                    app:layout_constraintBottom_toBottomOf="@+id/textView5"
+                    app:layout_constraintStart_toEndOf="@id/guideline_start_about"
+                    app:layout_constraintTop_toTopOf="@+id/textView4"
+                    app:layout_constraintVertical_bias="0.55"
+                    tools:ignore="ContentDescription" />
+
+                <TextView
+                    android:id="@+id/textView4"
+                    style="@style/DefaultTextView"
+                    android:layout_marginEnd="@dimen/dimen_large"
+                    android:text="@string/your_bookmark"
+                    android:textColor="@color/secondaryTextColor"
+                    android:textSize="20sp"
+                    app:layout_constraintBottom_toBottomOf="@+id/view_about"
+                    app:layout_constraintEnd_toStartOf="@+id/guideline_end_about"
+                    app:layout_constraintHorizontal_bias="1.0"
+                    app:layout_constraintStart_toEndOf="@+id/img_about"
+                    app:layout_constraintTop_toTopOf="parent"
+                    app:layout_constraintVertical_bias="0.40"  />
+
+                <TextView
+                    android:id="@+id/textView5"
+                    style="@style/DefaultTextView"
+                    android:layout_marginTop="@dimen/dimen_super_small"
+                    android:text="@string/app_name"
+                    android:textColor="@color/secondaryTextColor"
+                    app:layout_constraintBottom_toBottomOf="@+id/view_about"
+                    app:layout_constraintEnd_toEndOf="@+id/textView4"
+                    app:layout_constraintTop_toBottomOf="@+id/textView4"
+                    app:layout_constraintVertical_bias="0.0" />
+            </androidx.constraintlayout.widget.ConstraintLayout>
+        </com.google.android.material.appbar.CollapsingToolbarLayout>
+
+    </com.google.android.material.appbar.AppBarLayout>
+
+    <androidx.recyclerview.widget.RecyclerView
+        android:id="@+id/rv_bookmark_capture"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="@dimen/dimen_standard"
+        android:layout_marginTop="@dimen/dimen_standard"
+        android:layout_marginEnd="@dimen/dimen_standard"
+        tools:listitem="@layout/items_bookmark_plants"
+        app:layout_behavior="com.google.android.material.appbar.AppBarLayout$ScrollingViewBehavior" />
+
+</androidx.coordinatorlayout.widget.CoordinatorLayout>

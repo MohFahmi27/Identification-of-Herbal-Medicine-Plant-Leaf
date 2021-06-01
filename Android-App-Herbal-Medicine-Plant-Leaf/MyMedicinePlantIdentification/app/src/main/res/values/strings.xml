@@ -1,32 +1,26 @@
 <resources>
-    <string name="app_name">Herbal App</string>
+    <string name="app_name">HerbaLeaf App</string>
     <string name="home">Home</string>
-    <string name="settings">Settings</string>
     <string name="add_camera">Add Camera</string>
-    <string name="about">About</string>
+    <string name="description_format">%s…</string>
     <string name="hello_welcome">Hello, Welcome</string>
     <string name="app_description">Try take a picture and be amazed</string>
     <string name="about_fragment">About Fragment</string>
     <string name="app_icon">App Icon</string>
-    <string name="powerful_leaf">Powerful Leaf: </string>
+    <string name="today_news">Today News: </string>
     <string name="herbal_leaf">Herbal Leaf</string>
-    <string name="capstone_group">B21-CAP0311</string>
     <string name="capstone_description">
         In Indonesia no less than 30.000 species of plants. But of the many species,
         most people do not know the benefits, especially for herbal plants.
         So this project proposed to help people recognize the herbal plants instantly,
         give information to people that don’t know about herbal plants.</string>
-    <string name="capstone_group_name">
-         M0040277 Rasendriya Ramanda Darettamarlan
-        \nM1071420 Nicko Andreas
-        \nA1161478 Kevin Refinaldi Berlin
-        \nA1161479 Mohammad Fahmi
-        \nC1241611 Rama Kisara
-        \nC0040275 Diya Rochima Lisakiyanto
-    </string>
     <string name="take_picture">Take Picture</string>
     <string name="plants_name">Jelly Grass (Cincau)</string>
     <string name="description">Description</string>
     <string name="add_photo">Take Photo</string>
     <string name="analyze">Analyze Photo</string>
+    <string name="your_bookmark">Your Bookmark</string>
+    <string name="push_analyze">Push Analyze Button to be amazed</string>
+    <string name="history">History</string>
+    <string name="bookmark_result">Bookmark Result</string>
 </resources>

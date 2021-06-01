@@ -19,7 +19,7 @@ class HomeFragment : Fragment(R.layout.fragment_home) {
         super.onViewCreated(view, savedInstanceState)
         with(binding.rvPlants) {
             layoutManager =
-                LinearLayoutManager(requireContext(), LinearLayoutManager.HORIZONTAL, false)
+                LinearLayoutManager(requireContext())
             viewModel.plantsDummy.observe(viewLifecycleOwner) {
                 adapter = PlantsAdapter(it)
             }

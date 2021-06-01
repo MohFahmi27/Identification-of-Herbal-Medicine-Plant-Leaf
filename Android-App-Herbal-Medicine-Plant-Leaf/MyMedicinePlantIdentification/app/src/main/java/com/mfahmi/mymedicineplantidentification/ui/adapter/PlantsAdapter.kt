@@ -6,8 +6,8 @@ import android.view.ViewGroup
 import android.widget.ImageView
 import androidx.recyclerview.widget.RecyclerView
 import com.bumptech.glide.Glide
-import com.mfahmi.mymedicineplantidentification.data.models.Plants
 import com.mfahmi.mymedicineplantidentification.databinding.ItemsHomePlantsBinding
+import com.mfahmi.mymedicineplantidentification.domain.models.Plants
 
 class PlantsAdapter(private val listItem: List<Plants>) :
     RecyclerView.Adapter<PlantsAdapter.PlantsAdapterViewHolder>() {

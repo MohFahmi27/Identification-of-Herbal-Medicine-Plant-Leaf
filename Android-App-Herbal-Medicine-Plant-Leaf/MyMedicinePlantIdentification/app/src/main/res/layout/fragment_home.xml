@@ -105,7 +105,7 @@
                 android:id="@+id/textView3"
                 style="@style/DefaultTextView"
                 android:layout_marginTop="@dimen/dimen_standard"
-                android:text="@string/powerful_leaf"
+                android:text="@string/today_news"
                 android:textColor="@color/primaryTextColor"
                 android:textSize="15sp"
                 app:layout_constraintStart_toEndOf="@+id/guideline_start_about"
@@ -116,9 +116,11 @@
                 android:layout_width="0dp"
                 android:layout_height="wrap_content"
                 android:layout_marginTop="@dimen/dimen_standard"
+                android:layout_marginBottom="@dimen/dimen_super_large"
                 app:layout_constraintEnd_toStartOf="@+id/guideline_end_about"
                 app:layout_constraintStart_toStartOf="@+id/guideline_start_about"
-                app:layout_constraintTop_toBottomOf="@+id/textView3" />
+                app:layout_constraintTop_toBottomOf="@+id/textView3"
+                app:layout_constraintBottom_toBottomOf="parent"/>
 
         </androidx.constraintlayout.widget.ConstraintLayout>
 
