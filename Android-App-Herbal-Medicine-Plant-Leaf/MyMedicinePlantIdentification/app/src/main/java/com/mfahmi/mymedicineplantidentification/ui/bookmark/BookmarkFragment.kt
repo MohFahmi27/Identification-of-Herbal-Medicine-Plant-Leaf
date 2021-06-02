@@ -4,6 +4,7 @@ import android.os.Bundle
 import android.view.View
 import android.viewbinding.library.fragment.viewBinding
 import androidx.fragment.app.Fragment
+import androidx.navigation.fragment.findNavController
 import androidx.recyclerview.widget.LinearLayoutManager
 import com.mfahmi.mymedicineplantidentification.R
 import com.mfahmi.mymedicineplantidentification.databinding.FragmentBookmarkBinding
@@ -22,6 +23,11 @@ class BookmarkFragment : Fragment(R.layout.fragment_bookmark) {
 
         viewModel.plantsBookmark.observe(viewLifecycleOwner) {
             bookmarkAdapter.setData(it)
+        }
+
+        bookmarkAdapter.onItemClick = { plantDomain ->
+            val action = BookmarkFragmentDirections.bookmarkFragmentToDetailFragment(plantDomain)
+            findNavController().navigate(action)
         }
 
         with(binding.rvBookmarkCapture) {

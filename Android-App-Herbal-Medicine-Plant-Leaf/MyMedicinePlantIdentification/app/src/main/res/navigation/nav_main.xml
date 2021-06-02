@@ -14,5 +14,21 @@
         android:id="@+id/bookmarkFragment"
         android:name="com.mfahmi.mymedicineplantidentification.ui.bookmark.BookmarkFragment"
         android:label="fragment_bookmark"
-        tools:layout="@layout/fragment_bookmark" />
+        tools:layout="@layout/fragment_bookmark">
+        <action
+            android:id="@+id/bookmarkFragmentToDetailFragment"
+            app:destination="@id/detailFragment" />
+    </fragment>
+    <fragment
+        android:id="@+id/detailFragment"
+        android:name="com.mfahmi.mymedicineplantidentification.ui.detail.DetailFragment"
+        android:label="fragment_detail"
+        tools:layout="@layout/fragment_detail">
+        <argument
+            android:name="herbalPlantData"
+            app:argType="com.mfahmi.mymedicineplantidentification.domain.models.PlantDomain" />
+        <action
+            android:id="@+id/action_detailFragment_to_bookmarkFragment"
+            app:popUpTo="@id/bookmarkFragment" />
+    </fragment>
 </navigation>

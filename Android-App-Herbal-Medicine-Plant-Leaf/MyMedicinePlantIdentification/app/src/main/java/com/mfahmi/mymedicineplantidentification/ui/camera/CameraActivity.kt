@@ -118,6 +118,7 @@ class CameraActivity : AppCompatActivity() {
                 with(binding) {
                     grpContentGroup.setVisibility(true)
                     tvTitlePlants.text = it.label
+                    tvPredictionValue.text = getString(R.string.prediction_format, it.score)
                 }
             }
         }

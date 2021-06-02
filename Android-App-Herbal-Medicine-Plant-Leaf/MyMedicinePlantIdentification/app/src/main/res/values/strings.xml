@@ -1,5 +1,5 @@
 <resources>
-    <string name="app_name">HerbaLeaf App</string>
+    <string name="app_name">HerbaLeaf</string>
     <string name="home">Home</string>
     <string name="add_camera">Add Camera</string>
     <string name="description_format">%s…</string>
@@ -22,7 +22,8 @@
     <string name="your_bookmark">Your Bookmark</string>
     <string name="push_analyze">Push Analyze Button to be amazed</string>
     <string name="bookmark_result">Bookmark Result</string>
-    <string name="msg_save_bookmark">Now you\'ve bookmarked the new journey</string>
+    <string name="msg_save_bookmark">Bookmarked the new journey</string>
     <string name="bookmark">Bookmark</string>
     <string name="bookmark_desc">This is where you saved the journey</string>
+    <string name="prediction_format">Prediction: %f</string>
 </resources>

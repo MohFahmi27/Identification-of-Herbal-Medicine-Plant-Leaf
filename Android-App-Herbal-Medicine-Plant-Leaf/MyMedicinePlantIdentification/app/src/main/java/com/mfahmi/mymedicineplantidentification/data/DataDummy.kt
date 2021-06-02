@@ -1,4 +1,4 @@
-package com.mfahmi.mymedicineplantidentification.data.source
+package com.mfahmi.mymedicineplantidentification.data
 
 import androidx.lifecycle.LiveData
 import androidx.lifecycle.MutableLiveData
