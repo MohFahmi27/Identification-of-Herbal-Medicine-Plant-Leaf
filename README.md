@@ -1,4 +1,6 @@
 # Identification of Herbal Medicine Plant Leaf
+[![MohFahmi27](https://circleci.com/gh/MohFahmi27/Identification-of-Herbal-Medicine-Plant-Leaf.svg?style=svg)](https://circleci.com/gh/MohFahmi27/Identification-of-Herbal-Medicine-Plant-Leaf)
+
 <p align="center">
   <img src="https://github.com/MohFahmi27/Identification-of-Herbal-Medicine-Plant-Leaf/blob/main/assets/img/bangkit_banner.png">
 </p>
