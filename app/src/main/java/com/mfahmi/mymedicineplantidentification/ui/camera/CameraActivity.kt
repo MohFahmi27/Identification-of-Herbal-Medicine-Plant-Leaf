@@ -39,9 +39,9 @@ class CameraActivity : AppCompatActivity() {
     private val takePicture =
         registerForActivityResult(ActivityResultContracts.TakePicturePreview()) { bitmap ->
             run {
-                binding.imgCameraCapture.setImageBitmap(bitmap)
-                bitmapResult = bitmap
-                bitmapResult?.let {
+                bitmap?.let {
+                    binding.imgCameraCapture.setImageBitmap(bitmap)
+                    bitmapResult = bitmap
                     binding.btnAnalyzePhoto.setVisibility(true)
                 }
             }
@@ -82,8 +82,10 @@ class CameraActivity : AppCompatActivity() {
                     bitmapResult as Bitmap
                 )
             )
-            FancyToast.makeText(this, getString(R.string.msg_save_bookmark), FancyToast.LENGTH_SHORT,
-                FancyToast.SUCCESS, false).show()
+            FancyToast.makeText(
+                this, getString(R.string.msg_save_bookmark), FancyToast.LENGTH_SHORT,
+                FancyToast.SUCCESS, false
+            ).show()
             binding.btnSaveBookmark.setVisibility(false)
         }
     }
@@ -150,7 +152,8 @@ class CameraActivity : AppCompatActivity() {
         databaseReference.addValueEventListener(object : ValueEventListener {
             override fun onDataChange(snapshot: DataSnapshot) {
                 val result = snapshot.getValue<PlantFirebaseModel>()
-                binding.tvDescriptionPlant.text = result?.description
+                binding.tvDescriptionPlant.text =
+                    result?.description ?: getString(R.string.capstone_description)
                 binding.pgbCamera.setVisibility(false)
             }
 
