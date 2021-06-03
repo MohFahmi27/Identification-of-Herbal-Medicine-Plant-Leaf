@@ -2,7 +2,8 @@
 <project version="4">
   <component name="ProjectModuleManager">
     <modules>
-      <module fileurl="file://$PROJECT_DIR$/.idea/Identification-of-Herbal-Medicine-Plant-Leaf.iml" filepath="$PROJECT_DIR$/.idea/Identification-of-Herbal-Medicine-Plant-Leaf.iml" />
+      <module fileurl="file://$PROJECT_DIR$/.idea/MyMedicinePlantIdentification.iml" filepath="$PROJECT_DIR$/.idea/MyMedicinePlantIdentification.iml" />
+      <module fileurl="file://$PROJECT_DIR$/.idea/modules/app/MyMedicinePlantIdentification.app.iml" filepath="$PROJECT_DIR$/.idea/modules/app/MyMedicinePlantIdentification.app.iml" />
     </modules>
   </component>
 </project>
