@@ -4,6 +4,7 @@ plugins {
     id 'kotlin-kapt'
     id 'kotlin-parcelize'
     id 'androidx.navigation.safeargs'
+    id 'com.google.gms.google-services'
 }
 
 android {
@@ -80,6 +81,10 @@ dependencies {
     implementation "io.insert-koin:koin-core:3.0.2"
     implementation "io.insert-koin:koin-android:3.0.2"
     androidTestImplementation "io.insert-koin:koin-test:3.0.2"
+
+    // firebase
+    implementation platform('com.google.firebase:firebase-bom:28.0.1')
+    implementation 'com.google.firebase:firebase-database-ktx'
 
     // testing
     testImplementation 'junit:junit:4.13.2'
