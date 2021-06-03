@@ -7,6 +7,7 @@
     tools:context=".ui.camera.CameraActivity">
 
     <com.google.android.material.appbar.AppBarLayout
+        android:id="@+id/app_bar_camera"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:fitsSystemWindows="true">
@@ -19,7 +20,8 @@
 
             <androidx.constraintlayout.widget.ConstraintLayout
                 android:layout_width="match_parent"
-                android:layout_height="wrap_content">
+                android:layout_height="wrap_content"
+                app:layout_collapseMode="parallax">
 
                 <androidx.constraintlayout.widget.Guideline
                     android:id="@+id/guideline_start_camera"
@@ -40,11 +42,14 @@
                     android:layout_width="0dp"
                     android:layout_height="190dp"
                     android:layout_marginHorizontal="@dimen/dimen_small"
-                    android:layout_marginTop="@dimen/dimen_small"
+                    android:layout_marginTop="@dimen/dimen_super_small"
+                    android:layout_marginBottom="@dimen/dimen_small"
                     android:background="@drawable/sh_rounded_two_corner"
+                    app:layout_constraintBottom_toBottomOf="parent"
                     app:layout_constraintEnd_toEndOf="parent"
                     app:layout_constraintStart_toStartOf="parent"
-                    app:layout_constraintTop_toTopOf="parent" />
+                    app:layout_constraintTop_toTopOf="parent"
+                    app:layout_constraintVertical_bias="0.0" />
 
                 <ImageView
                     android:id="@+id/imageView"
@@ -84,6 +89,21 @@
                     app:layout_constraintEnd_toEndOf="@+id/textView_camera"
                     app:layout_constraintStart_toEndOf="@+id/imageView"
                     app:layout_constraintTop_toBottomOf="@+id/textView_camera" />
+
+                <androidx.appcompat.widget.AppCompatButton
+                    android:id="@+id/btn_add_photo"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_margin="@dimen/dimen_large"
+                    android:background="@drawable/btn_outlined_color"
+                    android:elevation="2dp"
+                    android:padding="@dimen/dimen_standard"
+                    android:text="@string/add_photo"
+                    android:textColor="@color/primaryTextColor"
+                    android:textStyle="bold"
+                    app:layout_constraintBottom_toBottomOf="@+id/view_camera"
+                    app:layout_constraintEnd_toEndOf="@+id/view_camera"
+                    app:layout_constraintTop_toBottomOf="@+id/view_camera" />
 
             </androidx.constraintlayout.widget.ConstraintLayout>
 
@@ -128,7 +148,7 @@
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:orientation="vertical"
-                app:layout_constraintGuide_end="@dimen/dimen_standard" />
+                app:layout_constraintGuide_percent="0.96107054" />
 
             <com.google.android.material.imageview.ShapeableImageView
                 android:id="@+id/img_camera_capture"
@@ -147,7 +167,7 @@
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:visibility="gone"
-                app:constraint_referenced_ids="btn_save_bookmark,tv_title_plants, tv_prediction_value, tv_description_title,tv_description_plant"
+                app:constraint_referenced_ids="btn_save_bookmark,tv_title_plants, tv_prediction_value, tv_description_title,tv_description_plant,rv_products,tv_products_title"
                 tools:visibility="visible" />
 
             <TextView
@@ -193,7 +213,6 @@
                 style="@style/DefaultTextView"
                 android:layout_width="0dp"
                 android:layout_marginTop="@dimen/dimen_super_small"
-                android:text="@string/capstone_description"
                 android:textColor="@color/primaryTextColor"
                 android:textSize="14sp"
                 app:layout_constraintEnd_toStartOf="@+id/guideline_end_camera2"
@@ -201,59 +220,67 @@
                 app:layout_constraintStart_toEndOf="@id/guideline_start_camera2"
                 app:layout_constraintTop_toBottomOf="@id/tv_description_title" />
 
+            <TextView
+                android:id="@+id/tv_products_title"
+                style="@style/DefaultTextView"
+                android:layout_marginTop="@dimen/dimen_standard"
+                android:text="@string/products"
+                android:textColor="@android:color/darker_gray"
+                android:textSize="14sp"
+                app:layout_constraintStart_toEndOf="@id/guideline_start_camera2"
+                app:layout_constraintTop_toBottomOf="@+id/tv_description_plant" />
+
+            <androidx.recyclerview.widget.RecyclerView
+                android:id="@+id/rv_products"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="@dimen/dimen_super_small"
+                app:layout_constraintEnd_toStartOf="@id/guideline_end_camera2"
+                app:layout_constraintStart_toEndOf="@id/guideline_start_camera2"
+                app:layout_constraintTop_toBottomOf="@id/tv_products_title" />
+
             <androidx.appcompat.widget.AppCompatButton
                 android:id="@+id/btn_save_bookmark"
                 android:layout_width="0dp"
                 android:layout_height="wrap_content"
                 android:layout_marginVertical="@dimen/dimen_standard"
+                android:layout_marginBottom="@dimen/dimen_large"
                 android:background="@drawable/btn_color"
                 android:text="@string/bookmark_result"
                 android:textColor="@color/secondaryTextColor"
                 app:layout_constraintBottom_toBottomOf="parent"
                 app:layout_constraintEnd_toEndOf="@id/tv_description_plant"
                 app:layout_constraintStart_toStartOf="@id/tv_description_plant"
-                app:layout_constraintTop_toBottomOf="@id/tv_description_plant" />
+                app:layout_constraintTop_toBottomOf="@id/rv_products" />
+
+            <com.google.android.material.floatingactionbutton.FloatingActionButton
+                android:id="@+id/btn_analyze_photo"
+                android:layout_width="60dp"
+                android:layout_height="60dp"
+                android:layout_gravity="bottom|end"
+                android:layout_margin="@dimen/dimen_large"
+                android:backgroundTint="@color/primaryColor"
+                android:contentDescription="@string/analyze"
+                android:elevation="2dp"
+                android:src="@drawable/ic_scan"
+                android:visibility="gone"
+                app:borderWidth="3dp"
+                app:fabCustomSize="60dp"
+                app:layout_constraintBottom_toBottomOf="@+id/img_camera_capture"
+                app:layout_constraintEnd_toStartOf="@+id/guideline_end_camera2"
+                app:layout_constraintTop_toBottomOf="@+id/img_camera_capture"
+                app:tint="@color/secondaryColor" />
 
         </androidx.constraintlayout.widget.ConstraintLayout>
 
     </androidx.core.widget.NestedScrollView>
 
-    <com.google.android.material.bottomappbar.BottomAppBar
-        android:id="@+id/bottom_app_bar_camera"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:layout_gravity="bottom">
-
-        <LinearLayout
-            android:layout_width="match_parent"
-            android:layout_height="match_parent"
-            android:layout_marginVertical="@dimen/dimen_small"
-            android:layout_marginEnd="@dimen/dimen_standard"
-            android:weightSum="2">
-
-            <androidx.appcompat.widget.AppCompatButton
-                android:id="@+id/btn_add_photo"
-                android:layout_width="0dp"
-                android:layout_height="wrap_content"
-                android:layout_weight="1"
-                android:background="@drawable/btn_color"
-                android:elevation="2dp"
-                android:text="@string/add_photo"
-                android:textColor="@color/secondaryTextColor" />
-
-            <androidx.appcompat.widget.AppCompatButton
-                android:id="@+id/btn_analyze_photo"
-                android:layout_width="0dp"
-                android:layout_height="wrap_content"
-                android:layout_marginStart="@dimen/dimen_small"
-                android:layout_weight="1"
-                android:background="@drawable/btn_outlined_color"
-                android:elevation="2dp"
-                android:text="@string/analyze"
-                android:textColor="@color/primaryTextColor" />
-
-        </LinearLayout>
-
-    </com.google.android.material.bottomappbar.BottomAppBar>
+    <ProgressBar
+        android:id="@+id/pgb_camera"
+        style="@style/Widget.AppCompat.ProgressBar"
+        android:layout_width="60dp"
+        android:layout_height="60dp"
+        android:layout_gravity="center_vertical|center"
+        android:visibility="invisible" />
 
 </androidx.coordinatorlayout.widget.CoordinatorLayout>

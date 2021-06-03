@@ -1,0 +1,39 @@
+{
+  "project_info": {
+    "project_number": "477298550261",
+    "project_id": "mymedicineplantidentification",
+    "storage_bucket": "mymedicineplantidentification.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:477298550261:android:4dd83e02c1e073d8616cbc",
+        "android_client_info": {
+          "package_name": "com.mfahmi.mymedicineplantidentification"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "477298550261-e0lcep4p8dj5e31g7gduromeit4dhbrj.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyAstDrk4mwbE-5YUIaf4EBY_80Du99aiXM"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "477298550261-e0lcep4p8dj5e31g7gduromeit4dhbrj.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

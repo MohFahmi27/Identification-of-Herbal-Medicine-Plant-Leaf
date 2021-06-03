@@ -5,15 +5,24 @@ import android.annotation.SuppressLint
 import android.content.pm.PackageManager
 import android.graphics.Bitmap
 import android.os.Bundle
+import android.util.Log
 import android.view.View
 import android.viewbinding.library.activity.viewBinding
 import androidx.activity.result.contract.ActivityResultContracts
 import androidx.appcompat.app.AppCompatActivity
 import androidx.core.app.ActivityCompat
+import androidx.recyclerview.widget.LinearLayoutManager
+import com.google.firebase.database.DataSnapshot
+import com.google.firebase.database.DatabaseError
+import com.google.firebase.database.FirebaseDatabase
+import com.google.firebase.database.ValueEventListener
+import com.google.firebase.database.ktx.getValue
 import com.mfahmi.mymedicineplantidentification.R
 import com.mfahmi.mymedicineplantidentification.databinding.ActivityCameraBinding
 import com.mfahmi.mymedicineplantidentification.domain.models.PlantDomain
+import com.mfahmi.mymedicineplantidentification.domain.models.PlantFirebaseModel
 import com.mfahmi.mymedicineplantidentification.ml.MedicineLeafModel
+import com.mfahmi.mymedicineplantidentification.ui.adapter.ProductsAdapter
 import com.shashank.sony.fancytoastlib.FancyToast
 import org.koin.androidx.viewmodel.ext.android.viewModel
 import org.tensorflow.lite.gpu.CompatibilityList
@@ -32,6 +41,9 @@ class CameraActivity : AppCompatActivity() {
             run {
                 binding.imgCameraCapture.setImageBitmap(bitmap)
                 bitmapResult = bitmap
+                bitmapResult?.let {
+                    binding.btnAnalyzePhoto.setVisibility(true)
+                }
             }
         }
     private val leafModel: MedicineLeafModel by lazy {
@@ -46,12 +58,13 @@ class CameraActivity : AppCompatActivity() {
         val dateFormatter = DateTimeFormatter.ofPattern("dd - MM - yyyy")
         LocalDateTime.now().format(dateFormatter)
     }
+    private val fDatabase: FirebaseDatabase by lazy {
+        FirebaseDatabase.getInstance()
+    }
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         binding.btnCloseCameraAct.setOnClickListener { finish() }
-        binding.bottomAppBarCamera.background = null
-        binding.btnAddPhoto.isEnabled = false
 
         checkPermissionCam()
         binding.btnAddPhoto.setOnClickListener {
@@ -59,7 +72,6 @@ class CameraActivity : AppCompatActivity() {
         }
         binding.btnAnalyzePhoto.setOnClickListener {
             setResultAnalyze()
-            binding.btnSaveBookmark.setVisibility(true)
         }
         binding.btnSaveBookmark.setOnClickListener {
             viewModel.insertPlantData(
@@ -70,13 +82,8 @@ class CameraActivity : AppCompatActivity() {
                     bitmapResult as Bitmap
                 )
             )
-            FancyToast.makeText(
-                this,
-                getString(R.string.msg_save_bookmark),
-                FancyToast.LENGTH_SHORT,
-                FancyToast.INFO,
-                false
-            ).show()
+            FancyToast.makeText(this, getString(R.string.msg_save_bookmark), FancyToast.LENGTH_SHORT,
+                FancyToast.SUCCESS, false).show()
             binding.btnSaveBookmark.setVisibility(false)
         }
     }
@@ -108,6 +115,17 @@ class CameraActivity : AppCompatActivity() {
         }
     }
 
+    private fun populateProducts() {
+        with(binding.rvProducts) {
+            layoutManager =
+                LinearLayoutManager(this@CameraActivity, LinearLayoutManager.HORIZONTAL, false)
+            viewModel.plantsDummy.observe(this@CameraActivity) {
+                adapter = ProductsAdapter(it)
+            }
+        }
+
+    }
+
     private fun setResultAnalyze() {
         bitmapResult?.let {
             val outputs = leafModel.process(TensorImage.fromBitmap(bitmapResult))
@@ -119,9 +137,28 @@ class CameraActivity : AppCompatActivity() {
                     grpContentGroup.setVisibility(true)
                     tvTitlePlants.text = it.label
                     tvPredictionValue.text = getString(R.string.prediction_format, it.score)
+                    pgbCamera.setVisibility(true)
+                    populateProducts()
+                    getFirebaseData(it.label)
                 }
             }
         }
+    }
+
+    private fun getFirebaseData(plantName: String) {
+        val databaseReference = fDatabase.getReference(plantName)
+        databaseReference.addValueEventListener(object : ValueEventListener {
+            override fun onDataChange(snapshot: DataSnapshot) {
+                val result = snapshot.getValue<PlantFirebaseModel>()
+                binding.tvDescriptionPlant.text = result?.description
+                binding.pgbCamera.setVisibility(false)
+            }
+
+            override fun onCancelled(error: DatabaseError) {
+                Log.d(TAG, "onCancelled: ${error.toException()}")
+            }
+
+        })
     }
 
     private fun View.setVisibility(state: Boolean) {
@@ -135,5 +172,6 @@ class CameraActivity : AppCompatActivity() {
 
     companion object {
         const val PERMISSION_REQ_CODE = 111
+        private const val TAG = "CameraActivity"
     }
 }
