@@ -22,7 +22,14 @@ class BookmarkFragment : Fragment(R.layout.fragment_bookmark) {
         super.onViewCreated(view, savedInstanceState)
 
         viewModel.plantsBookmark.observe(viewLifecycleOwner) {
-            bookmarkAdapter.setData(it)
+            if (it.isEmpty()) {
+                binding.lytEmptyPlaceholder.lytEmptyLinear.setVisibility(true)
+                binding.rvBookmarkCapture.setVisibility(false)
+            } else {
+                binding.lytEmptyPlaceholder.lytEmptyLinear.setVisibility(false)
+                bookmarkAdapter.setData(it)
+                binding.rvBookmarkCapture.setVisibility(true)
+            }
         }
 
         bookmarkAdapter.onItemClick = { plantDomain ->
@@ -35,5 +42,9 @@ class BookmarkFragment : Fragment(R.layout.fragment_bookmark) {
             setHasFixedSize(true)
             adapter = bookmarkAdapter
         }
+    }
+
+    private fun View.setVisibility(state: Boolean) {
+        if (state) this.visibility = View.VISIBLE else this.visibility = View.GONE
     }
 }

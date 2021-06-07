@@ -5,7 +5,6 @@ import android.annotation.SuppressLint
 import android.content.pm.PackageManager
 import android.graphics.Bitmap
 import android.os.Bundle
-import android.util.Log
 import android.view.View
 import android.viewbinding.library.activity.viewBinding
 import androidx.activity.result.contract.ActivityResultContracts
@@ -55,7 +54,7 @@ class CameraActivity : AppCompatActivity() {
         MedicineLeafModel.newInstance(this, options)
     }
     private val getDate: String by lazy {
-        val dateFormatter = DateTimeFormatter.ofPattern("dd - MM - yyyy")
+        val dateFormatter = DateTimeFormatter.ofPattern("h:mm a | dd - MMM - yyyy")
         LocalDateTime.now().format(dateFormatter)
     }
     private val fDatabase: FirebaseDatabase by lazy {
@@ -136,10 +135,10 @@ class CameraActivity : AppCompatActivity() {
                     .take(1)
             probability.forEach {
                 with(binding) {
+                    pgbCamera.setVisibility(true)
                     grpContentGroup.setVisibility(true)
                     tvTitlePlants.text = it.label
                     tvPredictionValue.text = getString(R.string.prediction_format, it.score)
-                    pgbCamera.setVisibility(true)
                     populateProducts()
                     getFirebaseData(it.label)
                 }
@@ -158,9 +157,12 @@ class CameraActivity : AppCompatActivity() {
             }
 
             override fun onCancelled(error: DatabaseError) {
-                Log.d(TAG, "onCancelled: ${error.toException()}")
+                FancyToast.makeText(
+                    this@CameraActivity, getString(R.string.msg_error), FancyToast.LENGTH_SHORT,
+                    FancyToast.ERROR, false
+                ).show()
+                binding.pgbCamera.setVisibility(false)
             }
-
         })
     }
 
@@ -175,6 +177,5 @@ class CameraActivity : AppCompatActivity() {
 
     companion object {
         const val PERMISSION_REQ_CODE = 111
-        private const val TAG = "CameraActivity"
     }
 }

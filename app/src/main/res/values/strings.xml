@@ -27,4 +27,6 @@
     <string name="bookmark_desc">This is where you saved the journey</string>
     <string name="prediction_format">Prediction: %f</string>
     <string name="products">Products</string>
+    <string name="empty_placeholder">Still waiting for your journey list</string>
+    <string name="msg_error">Something wrong, sorry</string>
 </resources>

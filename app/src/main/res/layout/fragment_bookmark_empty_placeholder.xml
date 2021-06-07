@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.appcompat.widget.LinearLayoutCompat xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/lyt_empty_linear"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:layout_marginTop="@dimen/dimen_standard"
+    android:orientation="vertical"
+    app:layout_behavior="com.google.android.material.appbar.AppBarLayout$ScrollingViewBehavior">
+
+    <androidx.appcompat.widget.AppCompatImageView
+        android:layout_width="280dp"
+        android:layout_height="240dp"
+        android:layout_gravity="center_horizontal"
+        android:src="@drawable/ic_waiting"
+        tools:ignore="ContentDescription" />
+
+    <TextView
+        style="@style/DefaultTextView"
+        android:layout_width="match_parent"
+        android:layout_marginHorizontal="@dimen/dimen_standard"
+        android:layout_marginTop="@dimen/dimen_standard"
+        android:text="@string/empty_placeholder"
+        android:textAlignment="center"
+        android:textColor="@color/primaryTextColor"
+        android:textSize="17sp" />
+
+</androidx.appcompat.widget.LinearLayoutCompat>

@@ -3,6 +3,7 @@ package com.mfahmi.mymedicineplantidentification.ui.adapter
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
+import android.view.animation.AnimationUtils
 import androidx.recyclerview.widget.RecyclerView
 import com.mfahmi.mymedicineplantidentification.R
 import com.mfahmi.mymedicineplantidentification.databinding.ItemsBookmarkPlantsBinding
@@ -52,7 +53,12 @@ class BookmarkAdapter : RecyclerView.Adapter<BookmarkAdapter.BookmarkAdapterView
 
     override fun onBindViewHolder(holder: BookmarkAdapterViewHolder, position: Int) {
         holder.bind(listBookmark[position])
+        holder.itemView.setAnimationRecyclerView()
     }
 
     override fun getItemCount(): Int = listBookmark.size
+
+    private fun View.setAnimationRecyclerView() {
+        startAnimation(AnimationUtils.loadAnimation(context, R.anim.recyclerview_anim_items))
+    }
 }

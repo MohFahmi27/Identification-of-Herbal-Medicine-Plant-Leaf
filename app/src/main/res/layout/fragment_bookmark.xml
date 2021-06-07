@@ -19,8 +19,8 @@
             <androidx.constraintlayout.widget.ConstraintLayout
                 android:layout_width="match_parent"
                 android:layout_height="match_parent"
-                app:layout_collapseMode="parallax"
-                android:fitsSystemWindows="true">
+                android:fitsSystemWindows="true"
+                app:layout_collapseMode="parallax">
 
                 <androidx.constraintlayout.widget.Guideline
                     android:id="@+id/guideline_start_about"
@@ -76,12 +76,12 @@
                     android:id="@+id/textView5"
                     style="@style/DefaultTextView"
                     android:layout_width="0dp"
+                    android:layout_marginStart="@dimen/dimen_standard"
                     android:layout_marginTop="@dimen/dimen_super_small"
                     android:text="@string/bookmark_desc"
+                    android:textAlignment="textEnd"
                     android:textColor="@color/secondaryTextColor"
                     android:textStyle="normal"
-                    android:textAlignment="textEnd"
-                    android:layout_marginStart="@dimen/dimen_standard"
                     app:layout_constraintBottom_toBottomOf="@+id/view_about"
                     app:layout_constraintEnd_toEndOf="@+id/textView4"
                     app:layout_constraintStart_toEndOf="@+id/img_about"
@@ -93,6 +93,11 @@
 
     </com.google.android.material.appbar.AppBarLayout>
 
+    <include
+        android:id="@+id/lyt_empty_placeholder"
+        layout="@layout/fragment_bookmark_empty_placeholder"
+        android:visibility="invisible"/>
+
     <androidx.recyclerview.widget.RecyclerView
         android:id="@+id/rv_bookmark_capture"
         android:layout_width="match_parent"
@@ -100,6 +105,7 @@
         android:layout_marginHorizontal="@dimen/dimen_standard"
         android:layout_marginTop="@dimen/dimen_small"
         android:layout_marginBottom="50dp"
+        android:visibility="invisible"
         app:layout_behavior="com.google.android.material.appbar.AppBarLayout$ScrollingViewBehavior"
         tools:listitem="@layout/items_bookmark_plants" />
 

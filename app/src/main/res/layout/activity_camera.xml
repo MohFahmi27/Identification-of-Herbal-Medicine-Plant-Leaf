@@ -130,6 +130,7 @@
     <androidx.core.widget.NestedScrollView
         android:layout_width="match_parent"
         android:layout_height="match_parent"
+        android:layout_marginBottom="@dimen/dimen_standard"
         app:layout_behavior="com.google.android.material.appbar.AppBarLayout$ScrollingViewBehavior">
 
         <androidx.constraintlayout.widget.ConstraintLayout
@@ -174,14 +175,14 @@
                 android:id="@+id/tv_title_plants"
                 style="@style/DefaultTextView"
                 android:layout_width="0dp"
-                android:layout_marginTop="@dimen/dimen_standard"
                 android:layout_marginEnd="@dimen/dimen_standard"
+                android:layout_marginTop="@dimen/dimen_standard"
                 android:textColor="@color/primaryTextColor"
                 android:textSize="18sp"
                 app:layout_constraintEnd_toStartOf="@+id/guideline_end_camera2"
                 app:layout_constraintHorizontal_bias="0.0"
                 app:layout_constraintStart_toEndOf="@id/guideline_start_camera2"
-                app:layout_constraintTop_toBottomOf="@+id/img_camera_capture"
+                app:layout_constraintTop_toBottomOf="@+id/btn_analyze_photo"
                 tools:text="Mango tree" />
 
             <TextView
@@ -243,8 +244,7 @@
                 android:id="@+id/btn_save_bookmark"
                 android:layout_width="0dp"
                 android:layout_height="wrap_content"
-                android:layout_marginVertical="@dimen/dimen_standard"
-                android:layout_marginBottom="@dimen/dimen_large"
+                android:layout_marginVertical="@dimen/dimen_large"
                 android:background="@drawable/btn_color"
                 android:text="@string/bookmark_result"
                 android:textColor="@color/secondaryTextColor"
@@ -269,7 +269,8 @@
                 app:layout_constraintBottom_toBottomOf="@+id/img_camera_capture"
                 app:layout_constraintEnd_toStartOf="@+id/guideline_end_camera2"
                 app:layout_constraintTop_toBottomOf="@+id/img_camera_capture"
-                app:tint="@color/secondaryColor" />
+                app:tint="@color/secondaryColor"
+                tools:visibility="visible"/>
 
         </androidx.constraintlayout.widget.ConstraintLayout>
 
