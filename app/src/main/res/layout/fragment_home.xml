@@ -26,8 +26,8 @@
                     android:id="@+id/view"
                     android:layout_width="0dp"
                     android:layout_height="190dp"
-                    android:layout_marginTop="@dimen/dimen_small"
                     android:layout_marginHorizontal="@dimen/dimen_small"
+                    android:layout_marginTop="@dimen/dimen_small"
                     android:background="@drawable/sh_rounded_two_corner"
                     app:layout_constraintEnd_toEndOf="parent"
                     app:layout_constraintStart_toStartOf="parent"
@@ -41,9 +41,9 @@
                     android:textColor="@color/secondaryTextColor"
                     android:textSize="20sp"
                     app:layout_constraintBottom_toBottomOf="@+id/view"
-                    app:layout_constraintStart_toStartOf="@id/view"
                     app:layout_constraintEnd_toEndOf="@id/view"
                     app:layout_constraintHorizontal_bias="0.0"
+                    app:layout_constraintStart_toStartOf="@id/view"
                     app:layout_constraintTop_toTopOf="@+id/view"
                     app:layout_constraintVertical_bias="0.40" />
 
@@ -85,23 +85,11 @@
         android:layout_height="wrap_content"
         app:layout_behavior="com.google.android.material.appbar.AppBarLayout$ScrollingViewBehavior">
 
-        <androidx.constraintlayout.widget.ConstraintLayout
+        <LinearLayout
             android:layout_width="match_parent"
-            android:layout_height="wrap_content">
-
-            <androidx.constraintlayout.widget.Guideline
-                android:id="@+id/guideline_start_about"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:orientation="vertical"
-                app:layout_constraintGuide_begin="@dimen/dimen_standard" />
-
-            <androidx.constraintlayout.widget.Guideline
-                android:id="@+id/guideline_end_about"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:orientation="vertical"
-                app:layout_constraintGuide_end="@dimen/dimen_standard" />
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            android:layout_marginHorizontal="@dimen/dimen_standard">
 
             <TextView
                 android:id="@+id/textView3"
@@ -109,24 +97,24 @@
                 android:layout_marginTop="@dimen/dimen_standard"
                 android:text="@string/today_news"
                 android:textColor="@color/primaryTextColor"
-                android:textSize="15sp"
-                app:layout_constraintStart_toEndOf="@+id/guideline_start_about"
-                app:layout_constraintTop_toTopOf="parent" />
+                android:textSize="15sp"/>
 
             <androidx.recyclerview.widget.RecyclerView
-                android:id="@+id/rv_plants"
-                android:layout_width="0dp"
+                android:id="@+id/rv_plants_pict"
+                android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:layout_marginTop="@dimen/dimen_standard"
-                android:layout_marginBottom="50dp"
-                app:layout_constraintBottom_toBottomOf="parent"
-                app:layout_constraintEnd_toStartOf="@+id/guideline_end_about"
-                app:layout_constraintStart_toStartOf="@+id/guideline_start_about"
-                app:layout_constraintTop_toBottomOf="@+id/textView3"
-                tools:listitem="@layout/items_home_plants"/>
-
-        </androidx.constraintlayout.widget.ConstraintLayout>
+                android:layout_marginTop="@dimen/dimen_small"
+                android:layout_marginBottom="50dp" />
+        </LinearLayout>
 
     </androidx.core.widget.NestedScrollView>
+
+    <ProgressBar
+        android:id="@+id/pgb_home"
+        style="@style/Widget.AppCompat.ProgressBar"
+        android:layout_width="60dp"
+        android:layout_height="60dp"
+        android:layout_gravity="center_vertical|center"
+        android:visibility="invisible" />
 
 </androidx.coordinatorlayout.widget.CoordinatorLayout>
