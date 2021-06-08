@@ -103,8 +103,21 @@
                 android:id="@+id/rv_plants_pict"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
+                android:layout_marginTop="@dimen/dimen_small" />
+
+            <TextView
+                style="@style/DefaultTextView"
+                android:layout_marginTop="@dimen/dimen_standard"
+                android:text="@string/products"
+                android:textColor="@color/primaryTextColor"
+                android:textSize="15sp"/>
+
+            <androidx.recyclerview.widget.RecyclerView
+                android:id="@+id/rv_products_home"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
                 android:layout_marginTop="@dimen/dimen_small"
-                android:layout_marginBottom="50dp" />
+                android:layout_marginBottom="50dp"/>
         </LinearLayout>
 
     </androidx.core.widget.NestedScrollView>

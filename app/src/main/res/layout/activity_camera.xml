@@ -175,8 +175,8 @@
                 android:id="@+id/tv_title_plants"
                 style="@style/DefaultTextView"
                 android:layout_width="0dp"
-                android:layout_marginEnd="@dimen/dimen_standard"
                 android:layout_marginTop="@dimen/dimen_standard"
+                android:layout_marginEnd="@dimen/dimen_standard"
                 android:textColor="@color/primaryTextColor"
                 android:textSize="18sp"
                 app:layout_constraintEnd_toStartOf="@+id/guideline_end_camera2"
@@ -270,7 +270,7 @@
                 app:layout_constraintEnd_toStartOf="@+id/guideline_end_camera2"
                 app:layout_constraintTop_toBottomOf="@+id/img_camera_capture"
                 app:tint="@color/secondaryColor"
-                tools:visibility="visible"/>
+                tools:visibility="visible" />
 
         </androidx.constraintlayout.widget.ConstraintLayout>
 

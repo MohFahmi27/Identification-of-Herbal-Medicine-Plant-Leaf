@@ -11,6 +11,8 @@ import com.mfahmi.mymedicineplantidentification.R
 import com.mfahmi.mymedicineplantidentification.data.source.remote.network.ApiResponse
 import com.mfahmi.mymedicineplantidentification.databinding.FragmentHomeBinding
 import com.mfahmi.mymedicineplantidentification.ui.adapter.PlantsAdapter
+import com.mfahmi.mymedicineplantidentification.ui.adapter.ProductsAdapter
+import com.shashank.sony.fancytoastlib.FancyToast
 import org.koin.androidx.viewmodel.ext.android.viewModel
 
 class HomeFragment : Fragment(R.layout.fragment_home) {
@@ -25,18 +27,43 @@ class HomeFragment : Fragment(R.layout.fragment_home) {
             layoutManager =
                 StaggeredGridLayoutManager(2, LinearLayoutManager.HORIZONTAL)
             viewModel.plant.observe(viewLifecycleOwner) {
-                adapter = when(it) {
+                when (it) {
                     is ApiResponse.Error -> {
-                        null
+                        adapter = null
+                        FancyToast.makeText(
+                            requireContext(),
+                            getString(R.string.msg_error),
+                            FancyToast.LENGTH_SHORT,
+                            FancyToast.ERROR,
+                            false
+                        ).show()
                     }
-                    is  ApiResponse.Success -> {
-                        PlantsAdapter(it.data)
+                    is ApiResponse.Success -> {
+                        adapter = PlantsAdapter(it.data)
                     }
                     is ApiResponse.Empty -> {
-                        null
+                        adapter = null
+                        FancyToast.makeText(
+                            requireContext(),
+                            getString(R.string.msg_error),
+                            FancyToast.LENGTH_SHORT,
+                            FancyToast.ERROR,
+                            false
+                        ).show()
                     }
                 }
                 binding.pgbHome.setVisibility(false)
+            }
+        }
+        populateProducts()
+    }
+
+    private fun populateProducts() {
+        with(binding.rvProductsHome) {
+            layoutManager =
+                LinearLayoutManager(requireContext(), LinearLayoutManager.HORIZONTAL, false)
+            viewModel.plantsDummy.observe(viewLifecycleOwner) {
+                adapter = ProductsAdapter(it)
             }
         }
     }

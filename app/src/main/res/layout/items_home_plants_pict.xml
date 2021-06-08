@@ -1,19 +1,13 @@
 <?xml version="1.0" encoding="utf-8"?>
-<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
-    android:layout_width="wrap_content"
-    android:layout_height="wrap_content"
-    android:padding="@dimen/dimen_super_small"
-    android:layout_margin="@dimen/dimen_small"
+<com.google.android.material.imageview.ShapeableImageView xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
-    xmlns:tools="http://schemas.android.com/tools">
-
-    <com.google.android.material.imageview.ShapeableImageView
-        android:id="@+id/img_plant_pict"
-        android:layout_width="150dp"
-        android:layout_height="190dp"
-        android:layout_gravity="center"
-        android:scaleType="centerCrop"
-        app:shapeAppearanceOverlay="@style/ShapeAppearanceOverlay.App.CornerSize10Percent"
-        tools:src="@tools:sample/avatars" />
-
-</FrameLayout>
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/img_plant_pict"
+    android:layout_width="150dp"
+    android:layout_height="190dp"
+    android:layout_gravity="center"
+    android:layout_marginEnd="@dimen/dimen_small"
+    android:layout_marginBottom="@dimen/dimen_small"
+    android:scaleType="centerCrop"
+    app:shapeAppearanceOverlay="@style/ShapeAppearanceOverlay.App.CornerSize10Percent"
+    tools:src="@tools:sample/avatars" />
