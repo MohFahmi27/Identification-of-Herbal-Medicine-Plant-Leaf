@@ -7,7 +7,7 @@
     <string name="app_description">Try take a picture and be amazed</string>
     <string name="about_fragment">About Fragment</string>
     <string name="app_icon">App Icon</string>
-    <string name="today_news">Today News: </string>
+    <string name="today_news">Amazing photo: </string>
     <string name="herbal_leaf">Herbal Leaf</string>
     <string name="capstone_description">
         In Indonesia no less than 30.000 species of plants. But of the many species,
@@ -26,7 +26,9 @@
     <string name="bookmark">Bookmark</string>
     <string name="bookmark_desc">This is where you saved the journey</string>
     <string name="prediction_format">Prediction: %f</string>
-    <string name="products">Products</string>
+    <string name="products">Products: </string>
     <string name="empty_placeholder">Still waiting for your journey list</string>
     <string name="msg_error">Something wrong, sorry</string>
+    <string name="msg_empty">Picture Not Found, sorry</string>
+    <string name="plant_photo">Plant Photo: </string>
 </resources>

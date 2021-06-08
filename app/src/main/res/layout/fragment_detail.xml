@@ -15,7 +15,6 @@
         <com.google.android.material.appbar.CollapsingToolbarLayout
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            app:contentScrim="@color/secondaryColor"
             app:layout_scrollFlags="scroll|exitUntilCollapsed">
 
             <androidx.constraintlayout.widget.ConstraintLayout
@@ -27,11 +26,11 @@
                     android:id="@+id/view2"
                     android:layout_width="0dp"
                     android:layout_height="110dp"
-                    android:layout_marginTop="@dimen/dimen_standard"
                     android:layout_marginHorizontal="@dimen/dimen_standard"
+                    android:layout_marginTop="@dimen/dimen_standard"
                     android:background="@drawable/sh_rounded_two_corner"
-                    app:layout_constraintStart_toStartOf="parent"
                     app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintStart_toStartOf="parent"
                     app:layout_constraintTop_toTopOf="parent" />
 
                 <ImageView
@@ -86,61 +85,54 @@
         android:layout_marginBottom="@dimen/dimen_super_large"
         app:layout_behavior="com.google.android.material.appbar.AppBarLayout$ScrollingViewBehavior">
 
-        <androidx.constraintlayout.widget.ConstraintLayout
+        <LinearLayout
             android:layout_width="match_parent"
-            android:layout_height="match_parent">
-
-            <androidx.constraintlayout.widget.Guideline
-                android:id="@+id/guideline_start_detail"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:orientation="vertical"
-                app:layout_constraintGuide_begin="@dimen/dimen_standard" />
-
-            <androidx.constraintlayout.widget.Guideline
-                android:id="@+id/guideline_end_detail"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:orientation="vertical"
-                app:layout_constraintGuide_end="@dimen/dimen_standard" />
+            android:layout_height="match_parent"
+            android:layout_marginHorizontal="@dimen/dimen_standard"
+            android:layout_marginTop="@dimen/dimen_large"
+            android:orientation="vertical">
 
             <com.google.android.material.imageview.ShapeableImageView
                 android:id="@+id/img_plant_detail"
-                android:layout_width="0dp"
+                android:layout_width="match_parent"
                 android:layout_height="190dp"
                 android:layout_gravity="center"
-                android:layout_marginTop="@dimen/dimen_large"
                 android:layout_marginBottom="@dimen/dimen_standard"
                 android:elevation="2dp"
                 android:scaleType="centerCrop"
-                app:layout_constraintEnd_toStartOf="@+id/guideline_end_detail"
-                app:layout_constraintStart_toStartOf="@id/guideline_start_detail"
-                app:layout_constraintTop_toTopOf="parent"
                 app:shapeAppearanceOverlay="@style/ShapeAppearanceOverlay.App.CornerSize10Percent"
                 tools:src="@tools:sample/avatars" />
 
             <TextView
-                android:id="@+id/tv_description_title"
                 style="@style/DefaultTextView"
                 android:layout_marginTop="@dimen/dimen_standard"
                 android:text="@string/description"
                 android:textColor="@android:color/darker_gray"
-                android:textSize="15sp"
-                app:layout_constraintStart_toEndOf="@id/guideline_start_detail"
-                app:layout_constraintTop_toBottomOf="@+id/img_plant_detail" />
+                android:textSize="15sp" />
 
             <TextView
                 android:id="@+id/tv_description_plant_detail"
                 style="@style/DefaultTextView"
-                android:layout_width="0dp"
+                android:layout_width="match_parent"
                 android:layout_marginTop="@dimen/dimen_small"
                 android:textColor="@color/primaryTextColor"
                 android:textSize="15sp"
-                app:layout_constraintEnd_toStartOf="@id/guideline_end_detail"
-                app:layout_constraintStart_toEndOf="@id/guideline_start_detail"
-                app:layout_constraintTop_toBottomOf="@+id/tv_description_title"
                 tools:text="@tools:sample/lorem/random" />
-        </androidx.constraintlayout.widget.ConstraintLayout>
+
+            <TextView
+                style="@style/DefaultTextView"
+                android:layout_marginTop="@dimen/dimen_standard"
+                android:text="@string/products"
+                android:textColor="@color/primaryTextColor"
+                android:textSize="15sp" />
+
+            <androidx.recyclerview.widget.RecyclerView
+                android:id="@+id/rv_products_detail"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="@dimen/dimen_small"
+                android:layout_marginBottom="50dp" />
+        </LinearLayout>
 
     </androidx.core.widget.NestedScrollView>
 
