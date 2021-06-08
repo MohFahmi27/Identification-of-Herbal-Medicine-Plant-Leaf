@@ -13,7 +13,10 @@ In Indonesia no less than 30.000 species of plants. But of the many species, mos
 - Go-To Market presentation : https://docs.google.com/presentation/d/1-w1Oe59icjBewBvjTe-C6s4NghN-cLvR_ijDWS5hjrA
 
 ## Project Resource: 
-- Paper Reference: https://jurnal.ugm.ac.id/v3/JNTETI/article/view/302/186
+- Paper Reference: 
+1. https://jurnal.ugm.ac.id/v3/JNTETI/article/view/302/186
+2. https://www.researchgate.net/publication/307867959_Recognition_System_of_Herbal_Medicine_on_Mobile_Terminal_Based_on_Android_Platform
+3. https://www.researchgate.net/publication/237441676_MedLeaf_Mobile_Application_For_Medicinal_Plant_Identification_Based_on_Leaf_Image
 - Medicinal Leaf Dataset: https://data.mendeley.com/datasets/nnytj2v3n5
 
 ## Capstone Project Team: 
