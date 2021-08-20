@@ -23,7 +23,7 @@ In Indonesia no less than 30.000 species of plants. But of the many species, mos
 | Name | Bangkit-ID | Github-Profile |
 | ------ | ------ | ------ | 
 | Rasendriya Ramanda Darettamarlan  | M0040277  | https://github.com/rasendriyaramanda |
-| Nicko Andreas  | M1071420  | https://github.com/warexpert26 |
+| Nicko Andreas  | M1071420  | https://github.com/nickoandreas |
 | Kevin Refinaldi Berlin | A1161478  | https://github.com/KevinRBerlin |
 | Mohammad Fahmi | A1161479 | https://github.com/MohFahmi27 |
 | Rama Kisara | C1241611 | https://github.com/RamaKisara |
